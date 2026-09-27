@@ -17,22 +17,22 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
   if (!txt) {
     await react('❌')
-    return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐁𝐑𝐀𝐓 ﹒ ERROR ：✿ 。
+🌸 ┇ 𝗕𝗥𝗔𝗧 ・ ERROR 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR DE USO\`\` ⚠️ —˙𖦹.꒷
 
-── *📖 USO* ╏ 🍕
+── *📖 USO* ╏ 🌸
 ➛ Escribe el texto para generar el sticker
-➛ Ejemplo: ${usedPrefix}${command} Lux X Yallico
+➛ Ejemplo: ${usedPrefix}${command} Sweet Bot
 
-── *💡 NOTA* ╏ 😼
-🍕 ➛ Garfield hará tu sticker pe
+── *💡 NOTA* ╏ 💖
+🍩 ➛ Mary hará tu sticker porfi
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
   }
 
@@ -73,8 +73,8 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     await conn.sendMessage(m.chat, {
       sticker: stickerBuffer,
-      packname: 'LUX X YALLICO',
-      author: 'GARFIELD EDITION 😼'
+      packname: 'SWEET BOT',
+      author: 'MARY EDITION 💖'
     }, { quoted: m })
 
     if (fs.existsSync(tmpInput)) fs.unlinkSync(tmpInput)
@@ -84,20 +84,20 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
   } catch (e) {
     console.error("[BRAT ERROR]:", e)
     await react('❌')
-    return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐁𝐑𝐀𝐓 ﹒ ERROR ：✿ 。
+🌸 ┇ 𝗕𝗥𝗔𝗧 ・ ERROR 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
-😼 Se le cayó la lasaña a la API
+💖 Se le quemó el cupcake a la API
 
-── *📝 DETALLE* ╏ 🍕
+── *📝 DETALLE* ╏ 🌸
 ❌ ➛ ${e.message}
 💡 ➛ Ejecuta: apt install ffmpeg -y
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
   }
 }
