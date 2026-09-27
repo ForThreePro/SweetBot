@@ -9,40 +9,41 @@ const react = async (conn, m, text) => {
 
 var handler = async (m, { conn, args }) => {
   const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-  const ownerNum = global.owner?.[0]?.[0] || '51927174369'
+  const ownerNum = '573044563583'
 
   if (!args[0]) {
-    let menuUso = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let menuUso = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐒 ﹒ TIKTOK ：✿ 。
+🌸 ┇ 𝗗𝗘𝗦𝗖𝗔𝗥𝗚𝗔𝗦 ・ TIKTOK 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
   ꒱ ׁ. ᘏ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢 ׅ 𝆬 ָ֢ ෆ
-📱 ࣪ ꕀ.tiktok ˚. ᵎᵎ
-> *"Bajando videos como Garfield baja lasaña un lunes"*
+🍭 ࣪ ꕀ.tiktok ˚. ᵎᵎ
+> *"Bajando videos como Mary baja pastelitos del horno"*
 
 .⃟𖥔 ݁. 𖦹˙— \`\`DESCARGAS\`\` 📥 —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🍕
-📱 ➛ Descarga videos de TikTok sin marca de agua
-📱 ➛ Con botones interactivos
-😼 ➛ Garfield viendo TikTok con lasaña
+── *📝 DESCRIPCIÓN* ╏ 🌸
+🎀 ➛ Descarga videos de TikTok sin marca de agua
+🍬 ➛ Con botones interactivos
+💖 ➛ Mary viendo TikTok con dulces
 
-── *📖 USO* ╏ 🍕
+── *📖 USO* ╏ 🌸
 ➛.*tiktok* <link de tiktok>
 ➛.*tt* <link de tiktok>
 
-── *💡 EJEMPLO* ╏ 🍕
+── *💡 EJEMPLO* ╏ 🌸
 ➛ https://vm.tiktok.com/ZMkcmTCa6/
 
-── *🔗 SOPORTE* ╏ 🍕
-📱 ➛ vm.tiktok.com
-📱 ➛ vt.tiktok.com
-📱 ➛ www.tiktok.com
+── *🔗 SOPORTE* ╏ 🌸
+🍭 ➛ vm.tiktok.com
+🍭 ➛ vt.tiktok.com
+🍭 ➛ www.tiktok.com
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
-*Owner*: @${ownerNum}
+🌸 *SWEET BOT - Creado por Mary* 💖
+👑 *Creadora:* Mary 🍩
+🍭 +57 3044563583 🍬
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: menuUso, mentions: [ownerNum + '@s.whatsapp.net'] }, { quoted: m })
   }
@@ -50,43 +51,43 @@ var handler = async (m, { conn, args }) => {
   const url = args[0]
   if (!url.match(/(https?:\/\/)?(www\.)?(vm\.|vt\.|www\.)?tiktok\.com\//)) {
     await react(conn, m, '❌')
-    let menuError = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let menuError = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ TIKTOK ：✿ 。
+🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ TIKTOK 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🍕
+── *📝 DESCRIPCIÓN* ╏ 🌸
 ❌ ➛ El enlace no es válido
-😿 ➛ Garfield: "Eso no es TikTok, es trampa"
+💔 ➛ Mary: "Eso no es TikTok, es trampa dulce"
 
-── *📖 USO* ╏ 🍕
+── *📖 USO* ╏ 🌸
 ➛ Solo links de: *tiktok.com*
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: menuError }, { quoted: m })
   }
 
   try {
     await react(conn, m, "⏳")
-    await m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    await m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐏𝐑𝐎𝐂𝐄𝐒𝐀𝐍𝐃𝐎 ﹒ TIKTOK ：✿ 。
+🌸 ┇ 𝗣𝗥𝗢𝗖𝗘𝗦𝗔𝗡𝗗𝗢 ・ TIKTOK 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`PROCESANDO\`\` ⚙️ —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🍕
+── *📊 ESTADO* ╏ 🌸
 🔍 ➛ Analizando link de TikTok...
-📥 ➛ Obteniendo video HD...
+🍬 ➛ Obteniendo video HD...
 ⬇️ ➛ Preparando descarga sin marca...
-😼 ➛ Garfield buscando el botón...
+💖 ➛ Mary buscando el botón...
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
 
     const tiktokData = await tiktokdl(url)
@@ -102,7 +103,7 @@ var handler = async (m, { conn, args }) => {
       key: { remoteJid: m.chat, participant: '0@s.whatsapp.net', fromMe: false },
       message: {
         locationMessage: {
-          name: `😼 LUX X YALLICO - GARFIELD EDITION 🍕`,
+          name: `🍩 SWEET BOT - Creado por Mary 💖`,
           jpegThumbnail: Buffer.from(await (await fetch('https://files.catbox.moe/dsgmid.jpg')).arrayBuffer())
         }
       }
@@ -115,30 +116,30 @@ var handler = async (m, { conn, args }) => {
         message: {
           interactiveMessage: proto.Message.InteractiveMessage.fromObject({
             body: {
-              text: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+              text: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐀𝐃𝐎 ﹒ TIKTOK ：✿ 。
+🌸 ┇ 𝗖𝗢𝗠𝗣𝗟𝗘𝗧𝗔𝗗𝗢 ・ TIKTOK 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`RESULTADO\`\` 📥 —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🍕
-📌 ➛ Título: *${title}*
-👤 ➛ Autor: *@${author}*
-❤️ ➛ Likes: *${likes}*
+── *📊 INFORMACIÓN* ╏ 🌸
+🍬 ➛ Título: *${title}*
+👑 ➛ Autor: *@${author}*
+💖 ➛ Likes: *${likes}*
 💬 ➛ Comentarios: *${comments}*
-😼 ➛ Garfield le dio like
+🌸 ➛ Mary le dio like
 
-── *📥 DESCARGA* ╏ 🍕
+── *📥 DESCARGA* ╏ 🌸
 ⬇️ ➛ Video sin marca de agua
-🍝 ➛ Listo para ver comiendo lasaña`
+🍩 ➛ Listo para ver comiendo pastelitos`
             },
-            footer: { text: 'Sin marca de agua ✨ | LUX X YALLICO - GARFIELD EDITION 😼' },
+            footer: { text: 'Sin marca de agua ✨ | SWEET BOT - Creado por Mary 💖' },
             header: { hasMediaAttachment: true, videoMessage: media.videoMessage },
             nativeFlowMessage: proto.Message.InteractiveMessage.NativeFlowMessage.fromObject({
               buttons: [
-                { name: 'cta_copy', buttonParamsJson: JSON.stringify({ display_text: '📋 Copiar texto', copy_code: title }) },
-                { name: 'cta_url', buttonParamsJson: JSON.stringify({ display_text: '📱 Ver en TikTok', url: url }) }
+                { name: 'cta_copy', buttonParamsJson: JSON.stringify({ display_text: '🍬 Copiar texto', copy_code: title }) },
+                { name: 'cta_url', buttonParamsJson: JSON.stringify({ display_text: '🍭 Ver en TikTok', url: url }) }
               ]
             })
           })
@@ -152,24 +153,24 @@ var handler = async (m, { conn, args }) => {
   } catch (error) {
     await react(conn, m, "❌")
     const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-    let menuErr = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let menuErr = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐑𝐎𝐑 ﹒ TIKTOK ：✿ 。
+🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ TIKTOK 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🍕
+── *📝 DESCRIPCIÓN* ╏ 🌸
 ❌ ➛ ${error.message}
-😴 ➛ Garfield se durmió intentando
+🍪 ➛ Mary se distrajo horneando
 
-── *💡 SOLUCIÓN* ╏ 🍕
-🔧 ➛ Verifica que el video sea público
-🔧 ➛ Intenta con otro link
-🍕 ➛ Garfield dice: prueba otra vez
+── *💡 SOLUCIÓN* ╏ 🌸
+🍬 ➛ Verifica que el video sea público
+🍬 ➛ Intenta con otro link
+🍩 ➛ Mary dice: prueba otra vez
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: menuErr }, { quoted: m })
   }
