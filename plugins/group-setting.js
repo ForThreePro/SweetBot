@@ -11,64 +11,64 @@ let handler = async (m, { conn, command }) => {
     let estado
     let icon
     let reactEmoji
-    let garfieldMsg
+    let maryMsg
 
     if (command === 'abrir') {
         isClose = 'not_announcement'
         estado = 'ABIERTO'
         icon = '🔓'
-        reactEmoji = '😼'
-        garfieldMsg = '😼 Garfield despertó... ¡Hora de chismear y comer lasaña! 🍝'
+        reactEmoji = '💖'
+        maryMsg = '💖 Mary despertó... ¡Hora de chismear y comer dulces! 🍩'
     } 
     if (command === 'cerrar') {
         isClose = 'announcement'
         estado = 'CERRADO'
         icon = '🔒'
-        reactEmoji = '😴'
-        garfieldMsg = '😴 Garfield se fue a dormir... ¡Shhh! 🍕'
+        reactEmoji = '🍪'
+        maryMsg = '🍪 Mary se fue a hornear... ¡Shhh! 🎀'
     }
 
     try {
         await conn.groupSettingUpdate(m.chat, isClose)
         await react(reactEmoji)
 
-        let msg = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let msg = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐆𝐑𝐔𝐏𝐎 ﹒ ${estado} ：✿ 。
+🌸 ┇ 𝗚𝗥𝗨𝗣𝗢 ・ ${estado} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ACTUALIZADO\`\` ${icon} —˙𖦹.꒷
-${garfieldMsg}
+${maryMsg}
 
-── *📊 INFO GARFIELD* ╏ 🍕
+── *📊 INFO* ╏ 🌸
 ${icon} ➛ Estado: *${estado}*
 👑 ➛ Por: @${m.sender.split('@')[0]}
 
-── *📝 NOTA* ╏ 🍕
+── *📝 NOTA* ╏ 🌸
 ${command === 'cerrar' 
-? '🔒 ➛ Solo admins pueden enviar mensajes\n😴 ➛ Garfield está en siesta' 
-: '💬 ➛ Todos pueden enviar mensajes\n🍕 ➛ Incluso Odie puede hablar'}
+? '🔒 ➛ Solo admins pueden enviar mensajes\n🍪 ➛ Mary está horneando' 
+: '💬 ➛ Todos pueden enviar mensajes\n🍩 ➛ Todos a compartir dulces'}
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         await conn.sendMessage(m.chat, { text: msg, mentions: [m.sender] }, { quoted: m })
     } catch (e) {
         await react('❌')
-        let error = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let error = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ GRUPO ：✿ 。
+🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ GRUPO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🍕
+── *📝 AVISO* ╏ 🌸
 ❌ ➛ No se pudo cambiar el estado
 🔒 ➛ ¿Soy admin del grupo?
-😼 ➛ Garfield dice: hazme admin pe
+💖 ➛ Mary dice: hazme admin porfi
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         conn.sendMessage(m.chat, { text: error }, { quoted: m })
     }
