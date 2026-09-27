@@ -24,50 +24,50 @@ let handler = async (m, { conn, args, command }) => {
   if (command.startsWith('set')) {
     await react('📝')
     if (!text) {
-      let uso = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+      let uso = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐌𝐄𝐍𝐒𝐀𝐉𝐄 ﹒ ${type.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗠𝗘𝗡𝗦𝗔𝗝𝗘 ・ ${type.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FORMATO\`\` ✏️ —˙𖦹.꒷
 
-── *📖 USO* ╏ 🍕
+── *📖 USO* ╏ 🌸
 ➛.${command} <texto del mensaje>
 
-── *💡 VARIABLES* ╏ 🍕
+── *💡 VARIABLES* ╏ 🌸
 👤 ➛ @user = Menciona al usuario
 👥 ➛ @group = Nombre del grupo
 📄 ➛ @desc = Descripción del grupo
-😼 ➛ @garfield = Frase de Garfield random
+💖 ➛ @mary = Frase dulce de Mary
 
-── *💡 EJEMPLOS* ╏ 🍕
+── *💡 EJEMPLOS* ╏ 🌸
 ➛.setwelcome Bienvenido @user a @group
 ➛.setbye Se fue @user de @group
 ➛.setkick @user fue kickeado de @group
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
       return conn.sendMessage(m.chat, { text: uso }, { quoted: m })
     }
 
     chat[key] = text
-    let ok = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let ok = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐆𝐔𝐀𝐑𝐃𝐀𝐃𝐎 ﹒ ${type.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗚𝗨𝗔𝗥𝗗𝗔𝗗𝗢 ・ ${type.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`TEXTO GUARDADO\`\` ✅ —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🍕
+── *📊 INFORMACIÓN* ╏ 🌸
 ✅ ➛ Mensaje de *${type}* guardado
-😼 ➛ Garfield aprobó el texto
+💖 ➛ Mary aprobó el texto
 
-── *📝 VISTA PREVIA* ╏ 🍕
+── *📝 VISTA PREVIA* ╏ 🌸
 💬 ➛ ${text}
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: ok }, { quoted: m })
   }
@@ -75,38 +75,38 @@ let handler = async (m, { conn, args, command }) => {
   if (command.startsWith('del')) {
     await react('🗑️')
     if (!chat[key]) {
-      let vacio = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+      let vacio = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐍𝐎 𝐂𝐎𝐍𝐅𝐈𝐆𝐔𝐑𝐀𝐃𝐎 ﹒ ${type.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗡𝗢 𝗖𝗢𝗡𝗙𝗜𝗚𝗨𝗥𝗔𝗗𝗢 ・ ${type.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`AVISO\`\` 📭 —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🍕
-📭 ➛ No hay un mensaje de *${type}* personalizado
-😴 ➛ Garfield dice: no hay nada configurado
+── *📝 AVISO* ╏ 🌸
+🍪 ➛ No hay un mensaje de *${type}* personalizado
+💔 ➛ Mary dice: no hay nada configurado
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
       return conn.sendMessage(m.chat, { text: vacio }, { quoted: m })
     }
 
     delete chat[key]
-    let del = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let del = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐋𝐈𝐌𝐈𝐍𝐀𝐃𝐎 ﹒ ${type.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗘𝗟𝗜𝗠𝗜𝗡𝗔𝗗𝗢 ・ ${type.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`TEXTO ELIMINADO\`\` 🗑️ —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🍕
+── *📊 INFORMACIÓN* ╏ 🌸
 🗑️ ➛ Mensaje de *${type}* eliminado
 ✅ ➛ Volverá al mensaje por defecto
-😼 ➛ Garfield borró el texto y se fue a dormir
+💖 ➛ Mary borró el texto y se fue a hornear
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: del }, { quoted: m })
   }
