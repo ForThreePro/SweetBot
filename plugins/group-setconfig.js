@@ -11,7 +11,7 @@ let handler = async (m, { conn, command }) => {
     }
 
     if (command === 'setabrir' || command === 'setcerrar') {
-        if (!m.quoted) return m.reply('😼🍕 Responde a un sticker con .setabrir o .setcerrar - Garfield quiere su sticker pe')
+        if (!m.quoted) return m.reply('💖🍩 Responde a un sticker con .setabrir o .setcerrar - Mary quiere su sticker porfi')
         try {
             let q = m.quoted
             let fileSha256 = q.msg?.fileSha256 || q.message?.stickerMessage?.fileSha256
@@ -33,22 +33,22 @@ let handler = async (m, { conn, command }) => {
             let icon = command === 'setabrir' ? '🟢' : '🔴'
             await react(icon)
 
-            let msg = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            let msg = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐒𝐓𝐈𝐂𝐊𝐄𝐑 ﹒ ${estado} ：✿ 。
+🌸 ┇ 𝗦𝗧𝗜𝗖𝗞𝗘𝗥 ・ ${estado} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`GUARDADO\`\` ${icon} —˙𖦹.꒷
-😼 Odio los lunes, pero este sticker quedó purrfecto 🍝
+💖 Amo los dulces, y este sticker quedó perfecto 🍩
 
-── *📊 INFO GARFIELD* ╏ 🍕
+── *📊 INFO* ╏ 🌸
 ${icon} ➛ Tipo: *${estado}*
 👑 ➛ Por: @${m.sender.split('@')[0]}
 🔑 ➛ Hash: ${hash.slice(0,12)}...
-😸 ➛ Lasaña: *Servida*
+💖 ➛ Dulce: *Servido*
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
             return conn.sendMessage(m.chat, { text: msg, mentions: [m.sender] }, { quoted: m })
 
@@ -71,41 +71,41 @@ ${icon} ➛ Tipo: *${estado}*
 
         if (!borrado.length) {
             await react('❌')
-            return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐒𝐓𝐈𝐂𝐊𝐄𝐑 ﹒ RESET ：✿ 。
+🌸 ┇ 𝗦𝗧𝗜𝗖𝗞𝗘𝗥 ・ RESET 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`VACIO\`\` ⚠️ —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 😼
+── *📝 AVISO* ╏ 🌸
 ❌ ➛ No hay stickers configurados
 💡 ➛ Usa .setabrir / .setcerrar
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
         }
 
         await react('🗑️')
-        let msg = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let msg = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐒𝐓𝐈𝐂𝐊𝐄𝐑 ﹒ ELIMINADO ：✿ 。
+🌸 ┇ 𝗦𝗧𝗜𝗖𝗞𝗘𝗥 ・ ELIMINADO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`RESETEADO\`\` 🗑️ —˙𖦹.꒷
-😼 Garfield tiró el sticker a la basura, configura uno nuevo pe
+💖 Mary tiró el sticker a la basura, configura uno nuevo porfi
 
-── *📊 BORRADOS* ╏ 🍕
+── *📊 BORRADOS* ╏ 🌸
 ${borrado.map(b => `🗑️ ➛ ${b}`).join('\n')}
 👑 ➛ Por: @${m.sender.split('@')[0]}
 
-── *📝 NOTA* ╏ 😼
+── *📝 NOTA* ╏ 🌸
 🔒 ➛ Ya no se abrirá ni cerrará con sticker
 💡 ➛ Configura de nuevo con .setabrir / .setcerrar
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: msg, mentions: [m.sender] }, { quoted: m })
     }
@@ -128,38 +128,38 @@ handler.before = async function(m, { conn }) {
         if (!fileSha256) return
         let hash = Buffer.from(fileSha256).toString('base64')
 
-        let isClose, estado, icon, reactEmoji, nota, garfieldMsg
+        let isClose, estado, icon, reactEmoji, nota, maryMsg
 
         if (chat.stickerAbrir && hash === chat.stickerAbrir) {
-            isClose = 'not_announcement'; estado = 'ABIERTO'; icon = '🔓'; reactEmoji = '😼'; 
-            nota = '💬 ➛ Todos pueden hablar, incluso Odie'
-            garfieldMsg = '😼 Garfield despertó... ¡Hora de comer lasaña y chismear! 🍝'
+            isClose = 'not_announcement'; estado = 'ABIERTO'; icon = '🔓'; reactEmoji = '💖'; 
+            nota = '💬 ➛ Todos pueden hablar, hora del té'
+            maryMsg = '💖 Mary despertó... ¡Hora de comer dulces y chismear! 🍩'
         } else if (chat.stickerCerrar && hash === chat.stickerCerrar) {
-            isClose = 'announcement'; estado = 'CERRADO'; icon = '🔒'; reactEmoji = '😴'; 
-            nota = '🔒 ➛ Solo admins, Garfield está durmiendo siesta'
-            garfieldMsg = '😴 Garfield se fue a dormir... ¡Shhh, no despierten al gato! 🍕'
+            isClose = 'announcement'; estado = 'CERRADO'; icon = '🔒'; reactEmoji = '🍪'; 
+            nota = '🔒 ➛ Solo admins, Mary está horneando'
+            maryMsg = '🍪 Mary se fue a hornear... ¡Shhh, no despierten a la pastelera! 🎀'
         } else return
 
         await conn.groupSettingUpdate(m.chat, isClose)
         await react(reactEmoji)
 
-        let msg = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let msg = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐆𝐑𝐔𝐏𝐎 ﹒ ${estado} ：✿ 。
+🌸 ┇ 𝗚𝗥𝗨𝗣𝗢 ・ ${estado} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ACTUALIZADO\`\` ${icon} —˙𖦹.꒷
-${garfieldMsg}
+${maryMsg}
 
-── *📊 INFO GARFIELD* ╏ 🍕
+── *📊 INFO* ╏ 🌸
 ${icon} ➛ Estado: *${estado}*
 👑 ➛ Por: @${m.sender.split('@')[0]}
 
-── *📝 NOTA* ╏ 😼
+── *📝 NOTA* ╏ 🌸
 ${nota}
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         await conn.sendMessage(m.chat, { text: msg, mentions: [m.sender] }, { quoted: m })
 
