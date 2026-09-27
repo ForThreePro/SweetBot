@@ -8,38 +8,38 @@ let handler = async (m, { conn }) => {
     let groupName = await conn.getName(m.chat)
 
     if (!m.isGroup) {
-        let error = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let error = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐑𝐎𝐑 ﹒ SALIR ：✿ 。
+🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ SALIR 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🍕
+── *📝 AVISO* ╏ 🌸
 ❌ ➛ Este comando solo funciona en grupos
-😴 ➛ Garfield no sale de su cama, solo de grupos
+🍪 ➛ Mary no sale de su pastelería, solo de grupos
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: error }, { quoted: m })
     }
 
-    let miNumero = '51927174369@s.whatsapp.net'
+    let miNumero = '573044563583@s.whatsapp.net'
     if (user!== miNumero) {
-        let error = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let error = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐀𝐂𝐄𝐒𝐎 𝐃𝐄𝐍𝐄𝐆𝐀𝐃𝐎 ﹒ SALIR ：✿ 。
+🌸 ┇ 𝗔𝗖𝗘𝗦𝗢 𝗗𝗘𝗡𝗘𝗚𝗔𝗗𝗢 ・ SALIR 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 🔒 —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🍕
-🔒 ➛ Este comando es exclusivo del dueño
-😼 ➛ Solo Garfield mayor puede irse a comer
+── *📝 AVISO* ╏ 🌸
+🔒 ➛ Este comando es exclusivo de la dueña
+💖 ➛ Solo Mary puede irse a hornear
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: error }, { quoted: m })
     }
@@ -51,31 +51,32 @@ let handler = async (m, { conn }) => {
         pp = 'https://files.evogb.win/YhR5LZ.jpg'
     }
 
-    let texto = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let texto = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐃𝐄𝐒𝐏𝐄𝐃𝐈𝐃𝐀 ﹒ ADIOS ：✿ 。
+🌸 ┇ 𝗗𝗘𝗦𝗣𝗘𝗗𝗜𝗗𝗔 ・ ADIOS 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`SALIENDO\`\` 👋 —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🍕
+── *📊 INFORMACIÓN* ╏ 🌸
 👋 ➛ *${nombre}* se despide de: *${groupName}*
-😼 ➛ Garfield se va por más lasaña
+💖 ➛ Mary se va por más dulces
 
-── *📝 MENSAJE* ╏ 🍕
+── *📝 MENSAJE* ╏ 🌸
 ✨ ➛ Gracias por la confianza depositada
 ✨ ➛ Cada momento compartido en este grupo
 ✨ ➛ Por elegirnos como su Bot #1 de WhatsApp 2026
-🍕 ➛ Me llevo los mejores recuerdos y olor a lasaña
+🍩 ➛ Me llevo los mejores recuerdos y olor a pastelitos
 💌 ➛ Si necesitan volver a contar conmigo, aquí estaré
-😴 ➛ Odio los lunes, pero amo este grupo
+🌸 ➛ Amo los dulces, y amo este grupo
 
-── *📞 SOPORTE* ╏ 🍕
-📱 ➛ Soporte 24/7: *+51 927 174 369*
-🍝 ➛ Soporte con lasaña incluida
+── *📞 SOPORTE* ╏ 🌸
+🍭 ➛ Soporte 24/7: *+57 3044563583*
+🍬 ➛ Soporte con dulces incluidos
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
+👑 *Creadora:* Mary 🍩
 ━━━━━━━━━━━`
 
     await conn.sendMessage(m.chat, {
@@ -84,18 +85,18 @@ let handler = async (m, { conn }) => {
         mentions: [user]
     })
 
-    await conn.sendMessage(m.chat, { text: `😼 Saliendo en 3... Garfield terminando lasaña` })
+    await conn.sendMessage(m.chat, { text: `🍩 Saliendo en 3... Mary terminando pastelitos` })
     await new Promise(r => setTimeout(r, 1000))
-    await conn.sendMessage(m.chat, { text: `🍕 Saliendo en 2... Guardando siesta` })
+    await conn.sendMessage(m.chat, { text: `🍭 Saliendo en 2... Guardando recetas` })
     await new Promise(r => setTimeout(r, 1000))
-    await conn.sendMessage(m.chat, { text: `😴 Saliendo en 1... Adiós, odio los lunes!` })
+    await conn.sendMessage(m.chat, { text: `💖 Saliendo en 1... Adiós, dulces sueños!` })
     await new Promise(r => setTimeout(r, 1000))
 
     await conn.groupParticipantsUpdate(m.chat, [user], "remove")
 }
 
 handler.help = ['salir']
-handler.tags = ['propietario']
+handler.tags = ['owner']
 handler.command = /^salir$/i
 handler.group = true
 handler.botAdmin = true
