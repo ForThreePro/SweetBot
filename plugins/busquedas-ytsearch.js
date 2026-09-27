@@ -14,41 +14,41 @@ let handler = async (m, { conn, text }) => {
 
     if (!text) {
         await react('❌')
-        let error = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let error = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐑𝐎𝐑 ﹒ YOUTUBE ：✿ 。
+🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ YOUTUBE 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🍕
+── *📝 AVISO* ╏ 🌸
 ❌ ➛ ¿Qué deseas buscar en YouTube?
-😼 ➛ Garfield dice: escribe algo pe
+💖 ➛ Mary dice: escribe algo porfi
 
-── *💡 EJEMPLO* ╏ 🍕
-➛.ytsearch Bad Bunny
+── *💡 EJEMPLO* ╏ 🌸
+➛.ytsearch recetas dulces
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: error }, { quoted: m })
     }
 
     await react('🔍')
-    await m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    await m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐁𝐔𝐒𝐂𝐀𝐍𝐃𝐎 ﹒ YOUTUBE ：✿ 。
+🌸 ┇ 𝗕𝗨𝗦𝗖𝗔𝗡𝗗𝗢 ・ YOUTUBE 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`BUSCANDO\`\` 🔍 —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🍕
+── *📊 ESTADO* ╏ 🌸
 🔍 ➛ Buscando: *${text}*
 ⏳ ➛ Conectando a StellarWA...
-😼 ➛ Garfield buscando mientras come
+💖 ➛ Mary buscando mientras hornea
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
 
     try {
@@ -56,55 +56,56 @@ let handler = async (m, { conn, text }) => {
 
         if (!data.status ||!data.result || data.result.length === 0) {
             await react('❌')
-            let vacio = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            let vacio = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐒𝐈𝐍 𝐑𝐄𝐒𝐔𝐋𝐓𝐀𝐃𝐎𝐒 ﹒ YOUTUBE ：✿ 。
+🌸 ┇ 𝗦𝗜𝗡 𝗥𝗘𝗦𝗨𝗟𝗧𝗔𝗗𝗢𝗦 ・ YOUTUBE 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`VACIO\`\` 📭 —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🍕
-📭 ➛ No se encontraron resultados para: *${text}*
-😴 ➛ Garfield no encontró ni las migajas
+── *📝 AVISO* ╏ 🌸
+🍪 ➛ No se encontraron resultados para: *${text}*
+💔 ➛ Mary no encontró ni las migajas
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
             return conn.sendMessage(m.chat, { text: vacio }, { quoted: m })
         }
 
         let res = data.result.slice(0, 5).map((v, i) => 
-`── *${i+1}* ╏ 🍕
+`── *${i+1}* ╏ 🌸
 📺 ➛ *${v.title}*
 ⏱️ ➛ Duración: *${v.duration}*
 👁️ ➛ Vistas: *${v.views}*
 👤 ➛ Canal: *${v.author}*
 🔗 ➛ ${v.url}`).join('\n\n')
 
-        let caption = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let caption = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐓𝐎𝐏 𝟓 ﹒ RESULTADOS ：✿ 。
+🌸 ┇ 𝗧𝗢𝗣 𝟱 ・ RESULTADOS 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`RESULTADOS\`\` 📺 —˙𖦹.꒷
 
-── *📊 BÚSQUEDA* ╏ 🍕
+── *📊 BÚSQUEDA* ╏ 🌸
 🔎 ➛ ${text}
 
 ${res}
 
 ━━━━━━━━━━━
-── *📋 INFORMACIÓN* ╏ 🍕
+── *📋 INFORMACIÓN* ╏ 🌸
 👤 ➛ Solicitado por: ${user}
 👥 ➛ Grupo: *${groupName}*
-😼 ➛ Buscado por Garfield
+💖 ➛ Buscado por Mary
 
-── *💡 TIP* ╏ 🍕
+── *💡 TIP* ╏ 🌸
 ➛.ytmp4 + link
 ➛.ytmp3 + link
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
+👑 *Creadora:* Mary 🍩
 ━━━━━━━━━━━`
 
         await conn.sendMessage(m.chat, { text: caption, mentions: [m.sender] }, { quoted: m })
@@ -112,20 +113,20 @@ ${res}
     } catch (e) { 
         console.error(e)
         await react('❌')
-        let error = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let error = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐑𝐎𝐑 ﹒ YOUTUBE ：✿ 。
+🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ YOUTUBE 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🍕
+── *📝 AVISO* ╏ 🌸
 ❌ ➛ Error al conectar con StellarWA
 🔧 ➛ Intenta más tarde
-😼 ➛ Garfield dice: el api se fue a dormir
+💖 ➛ Mary dice: el api se fue a hornear
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         conn.sendMessage(m.chat, { text: error }, { quoted: m })
     }
