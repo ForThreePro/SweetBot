@@ -11,16 +11,16 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
 
   //.PRESTAMO - INTERÉS FIJO 25% UNA SOLA VEZ
   if (command === 'prestamo') {
-    if (user.deuda > 0) return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🚔 Deuda policía de ${user.deuda} 🪙\n😴 Paga primero, Garfield no presta con deuda\n\n${usedPrefix}work o ${usedPrefix}pagardeuda`)
-    if (user.prestamo > 0) return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🏦 Ya tienes préstamo activo\n💰 Capital: ${user.prestamo - user.interes} monedas\n📈 Interés: ${user.interes} monedas\n💵 *Total: ${user.prestamo} monedas*\n\nUsa ${usedPrefix}pagarprestamo <monto>`)
+    if (user.deuda > 0) return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🍪 Deuda dulce de ${user.deuda} 🍬\n🌸 Paga primero, Mary no presta con deuda\n\n${usedPrefix}work o ${usedPrefix}pagardeuda`)
+    if (user.prestamo > 0) return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n💎 Ya tienes préstamo activo\n🍬 Capital: ${user.prestamo - user.interes} dulces\n🌸 Interés: ${user.interes} dulces\n👑 *Total: ${user.prestamo} dulces*\n\nUsa ${usedPrefix}pagarprestamo <monto>`)
 
     let monto = parseInt(text)
-    if (isNaN(monto) || monto < 100) return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n⤷ ┇ 𝐁𝐀𝐍𝐂𝐎 ﹒ 𝐏𝐑𝐄𝐒𝐓𝐀𝐌𝐎 🍝\n\n🏦 *PRÉSTAMO BANCARIO GARFIELD* 🏦\n> *"Te presto pero me debes lasaña"*\n\nMínimo: 100 monedas\nMáximo: 10,000 monedas\nInterés: 25% fijo - Como la flojera de Garfield\n\nEj:\n100 → Pagas 125\n200 → Pagas 250\n500 → Pagas 625\n1000 → Pagas 1250\n\nUso: ${usedPrefix}prestamo <monto>`)
-    if (monto > 10000) return m.reply('😼 Máximo 10,000 monedas, ni Garfield presta más 🍕')
+    if (isNaN(monto) || monto < 100) return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n🌸 ┇ 𝗕𝗔𝗡𝗖𝗢 ・ 𝗣𝗥𝗘𝗦𝗧𝗔𝗠𝗢 💖\n\n💎 *PRÉSTAMO DULCE MARY* 💎\n> *"Te presto pero me debes pastelitos"*\n\nMínimo: 100 dulces\nMáximo: 10,000 dulces\nInterés: 25% fijo - Dulce como Mary\n\nEj:\n100 → Pagas 125\n200 → Pagas 250\n500 → Pagas 625\n1000 → Pagas 1250\n\nUso: ${usedPrefix}prestamo <monto>`)
+    if (monto > 10000) return m.reply('🍩 Máximo 10,000 dulces, ni Mary presta más 🍭')
 
     let totalRiqueza = user.coin + user.bank
     let limitePrestamo = Math.max(100, totalRiqueza * 2)
-    if (monto > limitePrestamo) return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🏦 Solo te presto hasta *${limitePrestamo} monedas* según tu riqueza\n🍝 Total: ${totalRiqueza} 🪙\n😴 Garfield no se fía mucho`)
+    if (monto > limitePrestamo) return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n💎 Solo te presto hasta *${limitePrestamo} dulces* según tu dulzura\n🍬 Total: ${totalRiqueza} 🍬\n🌸 Mary no se fía mucho`)
 
     let interesFijo = Math.floor(monto * 0.25)
     let totalPagar = monto + interesFijo
@@ -28,35 +28,35 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
     user.interes = interesFijo
     user.bank += monto
 
-    return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🏦 *¡PRÉSTAMO APROBADO!* 🏦\n😸 Garfield soltó la lasaña\n\n💰 Recibiste: *${monto} monedas* en tu banco\n📈 Interés: ${interesFijo} monedas (25%)\n💵 *Total a pagar: ${totalPagar} monedas*\n\n⚠️ Paga con ${usedPrefix}pagarprestamo <monto>\n\nBanco: ${user.bank} 🪙`)
+    return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n💎 *¡PRÉSTAMO APROBADO!* 💎\n🌸 Mary soltó los dulces\n\n🍬 Recibiste: *${monto} dulces* en tu banco\n🌸 Interés: ${interesFijo} dulces (25%)\n👑 *Total a pagar: ${totalPagar} dulces*\n\n⚠️ Paga con ${usedPrefix}pagarprestamo <monto>\n\nBanco: ${user.bank} 🍬`)
   }
 
   //.PAGARPRESTAMO
   if (['pagarprestamo', 'pp'].includes(command)) {
-    if (user.prestamo === 0) return m.reply('😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n✅ Sin préstamos, Garfield orgulloso 😸')
+    if (user.prestamo === 0) return m.reply('🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n✅ Sin préstamos, Mary orgullosa 🌸')
     let monto = parseInt(text)
-    if (isNaN(monto) || monto < 1) return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🏦 *TU PRÉSTAMO*\n💰 Capital: ${user.prestamo - user.interes}\n📈 Interés: ${user.interes}\n💵 *Total: ${user.prestamo}*\n\nUso: ${usedPrefix}pagarprestamo <monto>`)
-    if (user.coin < monto) return m.reply(`😼 Billetera: ${user.coin} 🪙\n💵 Deuda: ${user.prestamo} 🪙\n🍝 No alcanza ni para la propina`)
+    if (isNaN(monto) || monto < 1) return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n💎 *TU PRÉSTAMO*\n🍬 Capital: ${user.prestamo - user.interes}\n🌸 Interés: ${user.interes}\n👑 *Total: ${user.prestamo}*\n\nUso: ${usedPrefix}pagarprestamo <monto>`)
+    if (user.coin < monto) return m.reply(`🍩 Billetera: ${user.coin} 🍬\n💵 Deuda: ${user.prestamo} 🍬\n🌸 No alcanza ni para la propina dulce`)
     let aPagar = Math.min(monto, user.prestamo)
     user.coin -= aPagar
     user.prestamo -= aPagar
     if (user.prestamo === 0) {
       user.interes = 0
-      return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n✅ *¡PRÉSTAMO PAGADO!* ✅\n🍝 Pagaste ${aPagar} monedas\n😸 Garfield: "Por fin, ahora mi siesta"\n\nSaldo: ${user.coin} 🪙`)
+      return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n✅ *¡PRÉSTAMO PAGADO!* ✅\n🍭 Pagaste ${aPagar} dulces\n🌸 Mary: "Por fin, ahora a comer pastelitos"\n\nSaldo: ${user.coin} 🍬`)
     } else {
       let capitalOriginal = user.prestamo + aPagar - user.interes
       let interesOriginal = user.interes
       let porcentajePagado = aPagar / (capitalOriginal + interesOriginal)
       user.interes = Math.max(0, Math.floor(interesOriginal * (1 - porcentajePagado)))
-      return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n💸 Pagaste ${aPagar} monedas\n\n🏦 *RESTANTE*\n💰 Capital: ${user.prestamo - user.interes}\n📈 Interés: ${user.interes}\n💵 *Total: ${user.prestamo}*\n\nSaldo: ${user.coin} 🪙`)
+      return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n💎 Pagaste ${aPagar} dulces\n\n💖 *RESTANTE*\n🍬 Capital: ${user.prestamo - user.interes}\n🌸 Interés: ${user.interes}\n👑 *Total: ${user.prestamo}*\n\nSaldo: ${user.coin} 🍬`)
     }
   }
 
   //.VER PRESTAMO
   if (['verprestamo', 'miprestamo'].includes(command)) {
-    if (user.prestamo === 0) return m.reply('😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n✅ Sin préstamos\n🍕 Usa ' + usedPrefix + 'prestamo <monto> para pedir')
+    if (user.prestamo === 0) return m.reply('🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n✅ Sin préstamos\n🍭 Usa ' + usedPrefix + 'prestamo <monto> para pedir')
     let capital = user.prestamo - user.interes
-    return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🏦 *TU PRÉSTAMO GARFIELD* 🏦\n💰 Capital: ${capital} monedas\n📈 Interés: ${user.interes} monedas (25%)\n💵 *TOTAL: ${user.prestamo} monedas*\n\nUsa ${usedPrefix}pagarprestamo <monto> 🍝`)
+    return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n💎 *TU PRÉSTAMO SWEET* 💎\n🍬 Capital: ${capital} dulces\n🌸 Interés: ${user.interes} dulces (25%)\n👑 *TOTAL: ${user.prestamo} dulces*\n\nUsa ${usedPrefix}pagarprestamo <monto> 🍩`)
   }
 
   //.INTERES
@@ -68,65 +68,65 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
       let falta = tiempoEspera - (ahora - ultimoInteres)
       let horas = Math.floor(falta / 3600000)
       let minutos = Math.floor((falta % 3600000) / 60000)
-      return m.reply(`😴 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n⏰ Ya cobraste hoy, Garfield duerme\n⏳ Vuelve en: ${horas}h ${minutos}m 🍕`)
+      return m.reply(`🌸🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🌸\n\n⏰ Ya cobraste hoy, Mary descansa\n⏳ Vuelve en: ${horas}h ${minutos}m 🍩`)
     }
-    if (user.bank === 0) return m.reply('😼 Sin monedas en el banco... ¡Garfield se las comió! 🍝\nUsa ' + usedPrefix + 'dall para depositar')
+    if (user.bank === 0) return m.reply('🍩 Sin dulces en el banco... ¡Mary se los comió! 🍪\nUsa ' + usedPrefix + 'dall para depositar')
     let interesGanado = Math.floor(user.bank * 0.02)
     if (interesGanado < 1) interesGanado = 1
     user.bank += interesGanado
     user.ultimoInteres = ahora
-    return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🏦 *INTERÉS GARFIELD* 🏦\n😸 Ganaste: *${interesGanado} monedas* (2%)\n🍝 Tu banco genera lasaña sola\n\nBanco: ${user.bank} 🪙\n\nVuelve mañana 💰`)
+    return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n💎 *INTERÉS SWEET* 💎\n🌸 Ganaste: *${interesGanado} dulces* (2%)\n🍭 Tu banco genera pastelitos solo\n\nBanco: ${user.bank} 🍬\n\nVuelve mañana 💖`)
   }
 
   //.CRIMEN
   if (command === 'crimen') {
-    if (user.deuda > 0) return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🚔 Deuda de ${user.deuda} 🪙\n😴 Paga primero, no puedes robar con deudas`)
+    if (user.deuda > 0) return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🍪 Deuda de ${user.deuda} 🍬\n🌸 Paga primero, no puedes hacer travesuras con deudas`)
     let ahora = Date.now()
     let tiempoEspera = 600000
     if (ahora - user.ultimoCrimen < tiempoEspera) {
       let falta = tiempoEspera - (ahora - user.ultimoCrimen)
       let minutos = Math.ceil(falta / 60000)
-      return m.reply(`🚨 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n👮 La policía y Jon te vigilan\n⏳ Espera ${minutos} min para otro crimen 😼`)
+      return m.reply(`🚨🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🚨\n\n👑 Mary te vigila\n⏳ Espera ${minutos} min para otra travesura 🌸`)
     }
     user.ultimoCrimen = ahora
     let exito = Math.random() < 0.35
     if (exito) {
       let robado = Math.floor(Math.random() * 500) + 100
       user.coin += robado
-      return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🦹 *¡CRIMEN EXITOSO!* 🦹\n🍝 Robaste *${robado} monedas* del banco central\n👀 La policía no vio nada, Garfield te cubrió\n\nSaldo: ${user.coin} 🪙`)
+      return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n💖 *¡TRAVESURA EXITOSA!* 💖\n🍭 Robaste *${robado} dulces* de la tienda central\n🌸 Nadie vio nada, Mary te cubrió\n\nSaldo: ${user.coin} 🍬`)
     } else {
       let multa = Math.floor(Math.random() * 200) + 100
       if (user.coin < multa) {
         let deudaNueva = multa - user.coin
         user.deuda += deudaNueva
         user.coin = 0
-        return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🚔 *¡TE ATRAPÓ JON!* 🚔\n😿 Intentaste robar el banco pero fallaste\n\n💸 Multa: ${multa} monedas\n💔 *DEUDA*: ${user.deuda} monedas\n\nUsa ${usedPrefix}work para pagar\n\nSaldo: 0 🪙`)
+        return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🍪 *¡TE ATRAPÓ MARY!* 🍪\n🌸 Intentaste robar dulces pero fallaste\n\n💎 Multa: ${multa} dulces\n💔 *DEUDA*: ${user.deuda} dulces\n\nUsa ${usedPrefix}work para pagar\n\nSaldo: 0 🍬`)
       } else {
         user.coin -= multa
-        return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🚔 *¡TE ATRAPARON!* 🚔\n🔔 La alarma sonó, Odie ladró\n\n💸 Multa: *${multa} monedas*\n\nSaldo: ${user.coin} 🪙`)
+        return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🍪 *¡TE ATRAPARON!* 🍪\n🌸 La alarma dulce sonó\n\n💎 Multa: *${multa} dulces*\n\nSaldo: ${user.coin} 🍬`)
       }
     }
   }
 
   //.BANCO
   if (command === 'banco') {
-    let texto = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n⤷ ┇ 𝐁𝐀𝐍𝐂𝐎 ﹒ 𝐂𝐄𝐍𝐓𝐑𝐀𝐋 🍝\n> *"El banco de lasaña de Garfield"*\n\n`
-    texto += `💰 Banco: ${user.bank} monedas\n`
-    texto += `💵 Billetera: ${user.coin} monedas\n`
-    texto += `🚔 Deuda policía: ${user.deuda} monedas\n\n`
+    let texto = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n🌸 ┇ 𝗕𝗔𝗡𝗖𝗢 ・ 𝗖𝗘𝗡𝗧𝗥𝗔𝗟 💖\n> *"El banco de dulces de Mary"*\n\n`
+    texto += `💎 Banco: ${user.bank} dulces\n`
+    texto += `🍬 Billetera: ${user.coin} dulces\n`
+    texto += `🍪 Deuda dulce: ${user.deuda} dulces\n\n`
     if (user.prestamo > 0) {
       let capital = user.prestamo - user.interes
-      texto += `📊 *TU PRÉSTAMO* 🍕\n💰 Capital: ${capital}\n📈 Interés: ${user.interes}\n💵 Total: ${user.prestamo}\n\n`
+      texto += `📊 *TU PRÉSTAMO* 🍩\n🍬 Capital: ${capital}\n🌸 Interés: ${user.interes}\n👑 Total: ${user.prestamo}\n\n`
     } else {
-      texto += `✅ Sin préstamos - Garfield tranquilo 😸\n\n`
+      texto += `✅ Sin préstamos - Mary tranquila 🌸\n\n`
     }
-    texto += `📈 *SERVICIOS GARFIELD* ╏ 🍕\n`
-    texto += `• ${usedPrefix}interes - Cobra 2% diario 🍝\n`
-    texto += `• ${usedPrefix}prestamo <monto> - Préstamo 25% 🍕\n`
-    texto += `• ${usedPrefix}pagarprestamo <monto> - Paga deuda 💸\n`
-    texto += `• ${usedPrefix}crimen - Roba el banco (35%) 🦹\n\n`
-    texto += `💡 Tip: ${usedPrefix}dall para ganar interés como Garfield gana lasaña\n\n`
-    texto += `━━━━━━━━━━━\n🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`
+    texto += `🌸 *SERVICIOS SWEET* ╏ 🍭\n`
+    texto += `• ${usedPrefix}interes - Cobra 2% diario 🍩\n`
+    texto += `• ${usedPrefix}prestamo <monto> - Préstamo 25% 💎\n`
+    texto += `• ${usedPrefix}pagarprestamo <monto> - Paga deuda 💖\n`
+    texto += `• ${usedPrefix}crimen - Travesura dulce (35%) 🎀\n\n`
+    texto += `💡 Tip: ${usedPrefix}dall para ganar interés como Mary gana pastelitos\n\n`
+    texto += `━━━━━━━━━━━\n🌸 *SWEET BOT - Creado por Mary* 💖\n🍭 +57 3044563583 🍩`
     return m.reply(texto)
   }
 
@@ -138,21 +138,21 @@ let handler = async (m, { conn, usedPrefix, text, command }) => {
       let groupMetadata = await conn.groupMetadata(m.chat)
       isAdmin = groupMetadata.participants.find(p => p.id === m.sender)?.admin
     } catch {}
-    if (!isOwner &&!isAdmin) return m.reply('❌ Solo admins, ni Garfield puede perdonar sin permiso 😼')
+    if (!isOwner &&!isAdmin) return m.reply('❌ Solo admins, ni Mary puede perdonar sin permiso 🌸')
     let who = m.mentionedJid[0]
-    if (!who) return m.reply(`😼 Uso: ${usedPrefix}perdonarprestamo @user 🍕`)
+    if (!who) return m.reply(`🌸 Uso: ${usedPrefix}perdonarprestamo @user 🍩`)
     who = who.replace(/@lid$/, '@s.whatsapp.net')
     if (!global.db.data.users[who]) global.db.data.users[who] = { coin: 0, bank: 0, deuda: 0, prestamo: 0, interes: 0 }
     let userTarget = global.db.data.users[who]
     userTarget.prestamo = Number(userTarget.prestamo) || 0
-    if (userTarget.prestamo === 0) return m.reply(`😼 @${who.split('@')[0]} no tiene préstamos 🍝`, null, { mentions: [who] })
+    if (userTarget.prestamo === 0) return m.reply(`🌸 @${who.split('@')[0]} no tiene préstamos 🍭`, null, { mentions: [who] })
     let deudaPerdonada = userTarget.prestamo
     userTarget.prestamo = 0
     userTarget.interes = 0
     try {
-      await conn.reply(who, `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🏦 *¡PRÉSTAMO PERDONADO!* 🏦\n😸 Un admin te perdonó *${deudaPerdonada} monedas*\n🍝 Garfield: "Hoy es tu día de suerte"\n\nYa no debes nada ✅`, null, { mentions: [m.sender] })
+      await conn.reply(who, `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n💎 *¡PRÉSTAMO PERDONADO!* 💎\n🌸 Un admin te perdonó *${deudaPerdonada} dulces*\n🍭 Mary: "Hoy es tu día de suerte"\n\nYa no debes nada ✅`, null, { mentions: [m.sender] })
     } catch {}
-    return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n✅ *¡PRÉSTAMO PERDONADO!* ✅\n🍕 Le perdonaste *${deudaPerdonada} monedas* a @${who.split('@')[0]}\n\nYa no tiene deuda 😸`, null, { mentions: [who] })
+    return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n✅ *¡PRÉSTAMO PERDONADO!* ✅\n🍬 Le perdonaste *${deudaPerdonada} dulces* a @${who.split('@')[0]}\n\nYa no tiene deuda 🌸`, null, { mentions: [who] })
   }
 }
 
