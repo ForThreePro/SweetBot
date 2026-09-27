@@ -11,11 +11,11 @@ const handler = async (m, { isOwner, isAdmin, conn, participants, args }) => {
     if (!(isAdmin || isOwner)) {
       await react('❌')
       return conn.sendMessage(m.chat, {
-        text: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ TAGALL ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🍕\n❌ ➛ Solo admins pueden usar este comando\n😼 ➛ Garfield solo obedece a los admins pe\n━━━━━━━━━━━\n🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`
+        text: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ TAGALL 💖\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🌸\n❌ ➛ Solo admins pueden usar este comando\n💖 ➛ Mary solo obedece a los admins porfi\n━━━━━━━━━━━\n🌸 *SWEET BOT - Creado por Mary* 💖`
       }, { quoted: m })
     }
 
-    const customMessage = args.join(' ') || '📢 INVOCACIÓN GENERAL - GARFIELD EDITION'
+    const customMessage = args.join(' ') || '📢 INVOCACIÓN GENERAL - SWEET BOT'
     const groupMetadata = await conn.groupMetadata(m.chat).catch(() => ({ subject: 'Grupo', participants: [] }))
     const groupName = groupMetadata.subject
 
@@ -60,22 +60,22 @@ const handler = async (m, { isOwner, isAdmin, conn, participants, args }) => {
 
     const orderedFlags = countryFlags.map(c => c.bandera).concat(['🚩'])
 
-    const catalogoImg = { url: 'https://files.evogb.win/EvvgAh.jpg' }
+    const catalogoImg = { url: 'https://files.evogb.win/2oSeLs.jpg' }
 
-    let messageText = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let messageText = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐈𝐍𝐕𝐎𝐂𝐀𝐂𝐈𝐎𝐍 ﹒ GENERAL ：✿ 。
+🌸 ┇ 𝗜𝗡𝗩𝗢𝗖𝗔𝗖𝗜𝗢𝗡 ・ GENERAL 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`TAGALL\`\` 📢 —˙𖦹.꒷
-😼 Garfield los está llamando... ¡Despierten! 🍝
+💖 Mary los está llamando... ¡Despierten! 🍩
 
-── *📊 INFO GARFIELD* ╏ 🍕
+── *📊 INFO* ╏ 🌸
 👥 ➛ Grupo: *${groupName}*
 👤 ➛ Integrantes: *${participants.length}*
 💬 ➛ Mensaje: *${customMessage}*
 
-── *🌍 MIEMBROS POR PAÍS* ╏ 🍕
+── *🌍 MIEMBROS POR PAÍS* ╏ 🌸
 `
 
     for (const flag of orderedFlags) {
@@ -89,12 +89,12 @@ const handler = async (m, { isOwner, isAdmin, conn, participants, args }) => {
     }
 
     messageText += `
-── *📝 NOTA* ╏ 😼
+── *📝 NOTA* ╏ 💖
 📢 ➛ Todos fueron mencionados
-🍕 ➛ Lux X Yallico - Garfield Edition los invocó
+🍩 ➛ Sweet Bot - Mary los invocó
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
 
     await conn.sendMessage(m.chat, {
@@ -108,19 +108,19 @@ const handler = async (m, { isOwner, isAdmin, conn, participants, args }) => {
   } catch (error) {
     console.error("[ERROR EN TODOS]:", error)
     await react('❌')
-    let errorMsg = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let errorMsg = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ TAGALL ：✿ 。
+🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ TAGALL 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🍕
+── *📝 AVISO* ╏ 🌸
 ❌ ➛ Ocurrió un error al ejecutar el comando
-😴 ➛ Garfield se quedó dormido
+🍪 ➛ Mary se quedó horneando
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
     conn.sendMessage(m.chat, { text: errorMsg }, { quoted: m })
   }
