@@ -9,61 +9,62 @@ const react = async (conn, m, text) => {
 
 const handler = async (m, { conn, text, usedPrefix, command }) => {
     const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-    const ownerNum = global.owner?.[0]?.[0] || '51927174369'
+    const ownerNum = '573044563583'
 
     try {
         if (!text.trim()) {
-            let menuUso = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            let menuUso = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐒 ﹒ ${command.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗗𝗘𝗦𝗖𝗔𝗥𝗚𝗔𝗦 ・ ${command.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
   ꒱ ׁ. ᘏ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢 ׅ 𝆬 ָ֢ ෆ
-🎵 ࣪ ꕀ.${command} ˚. ᵎᵎ
-> *"Buscando música como Garfield busca su lasaña a las 3AM"*
+🍭 ࣪ ꕀ.${command} ˚. ᵎᵎ
+> *"Buscando música como Mary busca la receta perfecta"*
 
 .⃟𖥔 ݁. 𖦹˙— \`\`DESCARGAS\`\` 📥 —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🍕
-🎵 ➛ Busca y descarga música de YouTube
-🎵 ➛ Envía el audio en MP3
-😼 ➛ Garfield DJ en la casa
+── *📝 DESCRIPCIÓN* ╏ 🌸
+🍬 ➛ Busca y descarga música de YouTube
+🎀 ➛ Envía el audio en MP3
+💖 ➛ Mary DJ dulce
 
-── *📖 USO* ╏ 🍕
+── *📖 USO* ╏ 🌸
 ➛.*${command}* <nombre de canción>
 ➛.*${command}* <link de YouTube>
 
-── *💡 EJEMPLOS* ╏ 🍕
+── *💡 EJEMPLOS* ╏ 🌸
 ➛.*play* despacito
 ➛.*play* https://youtu.be/dQw4w9WgXcQ
 
-── *⏱️ LÍMITE* ╏ 🍕
-📦 ➛ Máx duración: *30 minutos*
-🍝 ➛ Como una siesta corta de Garfield
+── *⏱️ LÍMITE* ╏ 🌸
+🍪 ➛ Máx duración: *30 minutos*
+🍩 ➛ Como hornear pastelitos
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
-*Owner*: @${ownerNum}
+🌸 *SWEET BOT - Creado por Mary* 💖
+👑 *Creadora:* Mary 🍩
+🍭 +57 3044563583 🍬
 ━━━━━━━━━━━`
             return conn.sendMessage(m.chat, { text: menuUso, mentions: [ownerNum + '@s.whatsapp.net'] }, { quoted: m })
         }
 
         await react(conn, m, '🔍')
-        await m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        await m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐁𝐔𝐒𝐂𝐀𝐍𝐃𝐎 ﹒ ${command.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗕𝗨𝗦𝗖𝗔𝗡𝗗𝗢 ・ ${command.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`BUSCANDO\`\` 🔍 —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🍕
+── *📊 ESTADO* ╏ 🌸
 🔍 ➛ Buscando canción...
-📥 ➛ Obteniendo información...
+🍬 ➛ Obteniendo información...
 ⬇️ ➛ Preparando descarga...
-😼 ➛ Garfield afinando oídos...
+💖 ➛ Mary afinando oídos...
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
 
         const videoMatch = text.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/|live\/|v\/))([a-zA-Z0-9_-]{11})/)
@@ -83,27 +84,27 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
         const [_, mediaUrl] = await Promise.all([
             conn.sendMessage(m.chat, {
                 image: thumb,
-                caption: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+                caption: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐍𝐂𝐎𝐍𝐓𝐑𝐀𝐃𝐎 ﹒ ${command.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗘𝗡𝗖𝗢𝗡𝗧𝗥𝗔𝗗𝗢 ・ ${command.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`RESULTADO\`\` 🎵 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`RESULTADO\`\` 🍭 —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🍕
-📌 ➛ Título: *${title}*
-👤 ➛ Canal: *${canal}*
-👁️ ➛ Vistas: *${vistas}*
+── *📊 INFORMACIÓN* ╏ 🌸
+🍬 ➛ Título: *${title}*
+👑 ➛ Canal: *${canal}*
+💖 ➛ Vistas: *${vistas}*
 ⏱️ ➛ Duración: *${timestamp}*
 🔗 ➛ Link: ${shortUrl}
-😼 ➛ Encontrado por Garfield
+🌸 ➛ Encontrado por Mary
 
-── *📥 DESCARGA* ╏ 🍕
+── *📥 DESCARGA* ╏ 🌸
 ⬇️ ➛ Enviando audio...
-🍝 ➛ Preparando tu lasaña musical...
+🍩 ➛ Preparando tu dulce musical...
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
             }, { quoted: m }),
             getMediaUrl(shortUrl)
@@ -123,24 +124,24 @@ const handler = async (m, { conn, text, usedPrefix, command }) => {
     } catch (e) {
         await react(conn, m, '❌')
         const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-        let menuErr = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let menuErr = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐑𝐎𝐑 ﹒ ${command.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗘𝗥𝗢𝗥 ・ ${command.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🍕
+── *📝 DESCRIPCIÓN* ╏ 🌸
 ❌ ➛ ${e.message}
-😴 ➛ Garfield se durmió buscando
+🍪 ➛ Mary se distrajo horneando
 
-── *💡 SOLUCIÓN* ╏ 🍕
-🔧 ➛ Usa un nombre o link válido
-🔧 ➛ Máx 30 minutos de duración
-🍕 ➛ Intenta con otro sabor de lasaña
+── *💡 SOLUCIÓN* ╏ 🌸
+🍬 ➛ Usa un nombre o link válido
+🍬 ➛ Máx 30 minutos de duración
+🍩 ➛ Intenta con otro sabor dulce
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: menuErr }, { quoted: m })
     }
