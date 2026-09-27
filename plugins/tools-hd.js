@@ -50,57 +50,57 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
     if (!mime) {
       await react('❌')
-      return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+      return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐇𝐃 ﹒ MEJORADOR ：✿ 。
+🌸 ┇ 𝗛𝗗 ・ MEJORADOR 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`USO\`\` ⚠️ —˙𖦹.꒷
 
-── *📖 COMO USAR* ╏ 🍕
+── *📖 COMO USAR* ╏ 🌸
 ➛ Responde a una imagen con: *${usedPrefix + command}*
 ➛ Soporta: jpg, jpeg, png
-😼 ➛ Garfield la pondrá en 4K pe
+💖 ➛ Mary la pondrá en 4K porfi
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
     }
 
     if (!/image\/(jpe?g|png)/.test(mime)) {
       await react('❌')
-      return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+      return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐇𝐃 ﹒ ERROR ：✿ 。
+🌸 ┇ 𝗛𝗗 ・ ERROR 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FORMATO INVALIDO\`\` ❌ —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 😼
+── *📝 AVISO* ╏ 💖
 ❌ ➛ El formato *${mime}* no es compatible
 💡 ➛ Solo jpg, jpeg, png
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
     }
 
     try {
       await react('⏳')
       let statusMsg = await conn.sendMessage(m.chat, {
-        text: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        text: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐇𝐃 ﹒ PROCESANDO ：✿ 。
+🌸 ┇ 𝗛𝗗 ・ PROCESANDO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`MEJORANDO\`\` 🖼️ —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 😼
+── *📊 ESTADO* ╏ 💖
 ⏳ ➛ [1/4] Subiendo imagen...
 ⚡ ➛ Objetivo: 2K → 4K automático
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
       }, { quoted: m })
 
@@ -110,20 +110,20 @@ let handler = async (m, { conn, usedPrefix, command }) => {
       const uploadedUrl1 = await uploadToUguu(buffer, mime)
 
       await conn.sendMessage(m.chat, {
-        text: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        text: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐇𝐃 ﹒ PROCESANDO ：✿ 。
+🌸 ┇ 𝗛𝗗 ・ PROCESANDO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FASE 1/2\`\` 🖼️ —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 😼
+── *📊 ESTADO* ╏ 💖
 ✅ ➛ [1/4] Imagen subida
 ⏳ ➛ [2/4] Mejorando a 2K...
 ⚡ ➛ API: Stellar
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`,
         edit: statusMsg.key
       })
@@ -132,21 +132,21 @@ let handler = async (m, { conn, usedPrefix, command }) => {
       const buffer2K = await getEnhancedBuffer(uploadedUrl1)
 
       await conn.sendMessage(m.chat, {
-        text: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        text: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐇𝐃 ﹒ PROCESANDO ：✿ 。
+🌸 ┇ 𝗛𝗗 ・ PROCESANDO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FASE 2/2\`\` 🚀 —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 😼
+── *📊 ESTADO* ╏ 💖
 ✅ ➛ [2/4] Mejorada a 2K
 ⏳ ➛ [3/4] Subiendo 2K...
 ⏳ ➛ [4/4] Mejorando a 4K...
-🍕 ➛ Casi lista la lasaña en HD
+🍩 ➛ Casi listo el cupcake en HD
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`,
         edit: statusMsg.key
       })
@@ -157,22 +157,22 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
       await conn.sendMessage(m.chat, {
         image: buffer4K,
-        caption: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        caption: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐇𝐃 ﹒ RESULTADO ：✿ 。
+🌸 ┇ 𝗛𝗗 ・ RESULTADO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`LISTO\`\` ✅ —˙𖦹.꒷
-😼 Garfield la dejó en 4K sin moverse
+💖 Mary la dejó en 4K horneando
 
-── *📊 DETALLES* ╏ 🍕
+── *📊 DETALLES* ╏ 🌸
 ✨ ➛ Fase 1: Original → 2K
 🚀 ➛ Fase 2: 2K → 4K Ultra HD
 🔧 ➛ API: Stellar x2
-👤 ➛ Autor: LUX X YALLICO 😼
+👤 ➛ Autor: SWEET BOT 💖
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
       }, { quoted: m })
 
@@ -180,20 +180,20 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
     } catch (err) {
       await react('❌')
-      await m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+      await m.reply(`🍩🎀 𝗦𝗪𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐇𝐃 ﹒ ERROR ：✿ 。
+🌸 ┇ 𝗛𝗗 ・ ERROR 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
-😼 Se le quemó la lasaña a la API
+💖 Se le quemó el cupcake a la API
 
-── *📝 AVISO* ╏ 🍕
+── *📝 AVISO* ╏ 🌸
 ❌ ➛ ${err.message || err}
 💡 ➛ La API puede estar saturada, intenta de nuevo
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
     }
 }
