@@ -45,86 +45,87 @@ async function removeBgFromUrl(url) {
 
 let handler = async (m, { conn, usedPrefix, command }) => {
     const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-    const ownerNum = global.owner?.[0]?.[0] || '51927174369'
+    const ownerNum = '573044563583'
     const q = m.quoted || m
     const mime = (q.msg || q).mimetype || ''
 
     if (!mime) {
-        let menuUso = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let menuUso = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐇𝐄𝐑𝐀𝐌𝐈𝐄𝐍𝐓𝐀 ﹒ ${command.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗛𝗘𝗥𝗥𝗔𝗠𝗜𝗘𝗡𝗧𝗔 ・ ${command.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
   ꒱ ׁ. ᘏ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢 ׅ 𝆬 ָ֢ ෆ
-🖼️ ࣪ ꕀ.${command} ˚. ᵎᵎ
-> *"HDx4: Para que se vea pro como Garfield después de su siesta"*
+🎀 ࣪ ꕀ.${command} ˚. ᵎᵎ
+> *"HDx4: Para que se vea dulce como Mary después de hornear"*
 
 .⃟𖥔 ݁. 𖦹˙— \`\`IA\`\` ✨ —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🍕
-🖼️ ➛ Mejora la calidad de una imagen a *HD 4x*
-🖼️ ➛ Elimina el fondo automáticamente
-😼 ➛ Garfield supervisando en HD
+── *📝 DESCRIPCIÓN* ╏ 🌸
+🍩 ➛ Mejora la calidad de una imagen a *HD 4x*
+💖 ➛ Elimina el fondo automáticamente
+🌸 ➛ Mary supervisando en HD
 
-── *📖 USO* ╏ 🍕
+── *📖 USO* ╏ 🌸
 1️⃣ ➛ Responde a una imagen con:.*${command}*
 2️⃣ ➛ Envía formatos: JPG o PNG
 
-── *⚙️ PROCESO* ╏ 🍕
+── *⚙️ PROCESO* ╏ 🌸
 ⬆️ ➛ Paso 1: Mejora a HD 4x
-🗑️ ➛ Paso 2: Quita el fondo
-📤 ➛ Paso 3: Envía imagen + documento
+🍬 ➛ Paso 2: Quita el fondo
+🍭 ➛ Paso 3: Envía imagen + documento
 
-── *⚠️ NOTA* ╏ 🍕
+── *⚠️ NOTA* ╏ 🌸
 ⏱️ ➛ HDx4 tarda un poco más pero vale la pena
-🍝 ➛ Como esperar la lasaña perfecta
+🍪 ➛ Como esperar el pastelito perfecto
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
-*Owner*: @${ownerNum}
+🌸 *SWEET BOT - Creado por Mary* 💖
+👑 *Creadora:* Mary 🍩
+🍭 +57 3044563583 🍬
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: menuUso, mentions: [ownerNum + '@s.whatsapp.net'] }, { quoted: m })
     }
 
     if (!/image\/(jpe?g|png)/.test(mime)) {
-        let menuError = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let menuError = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐑𝐎𝐑 ﹒ ${command.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗘𝗥𝗢𝗥 ・ ${command.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🍕
+── *📝 DESCRIPCIÓN* ╏ 🌸
 ❌ ➛ Solo se aceptan imágenes JPG/PNG
-😿 ➛ Garfield: "Ese formato no es lasaña"
+💔 ➛ Mary: "Ese formato no es dulce"
 
-── *📖 USO* ╏ 🍕
+── *📖 USO* ╏ 🌸
 ➛ Responde a una imagen con:.*${command}*
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: menuError }, { quoted: m })
     }
 
     try {
         await m.react('⏳')
-        await m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        await m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐏𝐑𝐎𝐂𝐄𝐒𝐀𝐍𝐃𝐎 ﹒ ${command.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗣𝗥𝗢𝗖𝗘𝗦𝗔𝗡𝗗𝗢 ・ ${command.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`PROCESANDO\`\` ⚙️ —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🍕
+── *📊 ESTADO* ╏ 🌸
 ⬆️ ➛ Mejorando calidad a *HD 4x*...
-🗑️ ➛ Eliminando fondo...
-📤 ➛ Subiendo resultado...
+🍬 ➛ Eliminando fondo...
+🍭 ➛ Subiendo resultado...
 ⏱️ ➛ Esto puede tardar 20-40s
-😴 ➛ Garfield tomando siesta mientras procesa...
+🌸 ➛ Mary horneando mientras procesa...
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
 
         const buffer = await q.download()
@@ -135,25 +136,25 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
         await conn.sendMessage(m.chat, {
             image: finalBuffer,
-            caption: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            caption: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐀𝐃𝐎 ﹒ ${command.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗖𝗢𝗠𝗣𝗟𝗘𝗧𝗔𝗗𝗢 ・ ${command.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`RESULTADO\`\` ✨ —˙𖦹.꒷
 
-── *📊 RESULTADO* ╏ 🍕
-📌 ➛ Calidad: *HD 4x*
-📌 ➛ Fondo: *Eliminado*
-📌 ➛ Formato: *PNG Transparente*
-😼 ➛ Aprobado por Garfield
+── *📊 RESULTADO* ╏ 🌸
+🍩 ➛ Calidad: *HD 4x*
+💖 ➛ Fondo: *Eliminado*
+🎀 ➛ Formato: *PNG Transparente*
+🌸 ➛ Aprobado por Mary
 
-── *📥 DESCARGA* ╏ 🍕
+── *📥 DESCARGA* ╏ 🌸
 ⬇️ ➛ También se envió como documento
-🍝 ➛ Listo para tu colección
+🍭 ➛ Listo para tu colección
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         }, { quoted: m })
 
@@ -161,20 +162,20 @@ let handler = async (m, { conn, usedPrefix, command }) => {
             document: finalBuffer,
             fileName: 'image-hdx4-nobg.png',
             mimetype: 'image/png',
-            caption: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            caption: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐃𝐎𝐂𝐔𝐌𝐄𝐍𝐓𝐎 ﹒ ${command.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗗𝗢𝗖𝗨𝗠𝗘𝗡𝗧𝗢 ・ ${command.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`DOCUMENTO\`\` 📄 —˙𖦹.꒷
 
-── *📊 INFO* ╏ 🍕
-📄 ➛ Imagen PNG sin fondo HDx4
+── *📊 INFO* ╏ 🌸
+🍬 ➛ Imagen PNG sin fondo HDx4
 ✨ ➛ Lista para usar en diseños
-😼 ➛ Garfield dice: "Ahora sí se ve pro"
+💖 ➛ Mary dice: "Ahora sí se ve dulce"
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         }, { quoted: m })
 
@@ -183,24 +184,24 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     } catch (err) {
         await m.react('❌')
         const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-        let menuErr = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let menuErr = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐑𝐎𝐑 ﹒ ${command.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗘𝗥𝗢𝗥 ・ ${command.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🍕
+── *📝 DESCRIPCIÓN* ╏ 🌸
 ❌ ➛ ${err.message || err}
-😴 ➛ Garfield se quedó dormido procesando
+🍪 ➛ Mary se distrajo horneando
 
-── *💡 SOLUCIÓN* ╏ 🍕
-🔧 ➛ Usa una imagen clara JPG/PNG
-🔧 ➛ Máx 5MB recomendado para HDx4
-🍕 ➛ Intenta con menos lasaña... digo, peso
+── *💡 SOLUCIÓN* ╏ 🌸
+🍬 ➛ Usa una imagen clara JPG/PNG
+🍬 ➛ Máx 5MB recomendado para HDx4
+🍩 ➛ Intenta con menos peso dulce
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: menuErr }, { quoted: m })
     }
