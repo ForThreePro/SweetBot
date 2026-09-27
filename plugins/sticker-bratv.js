@@ -23,27 +23,27 @@ const handler = async (m, { conn, text }) => {
   try {
     let userId = m.sender
     let packstickers = global.db.data.users[userId] || {}
-    let texto1 = packstickers.text1 || global.packsticker || 'LUX X YALLICO'
-    let texto2 = packstickers.text2 || global.packsticker2 || 'GARFIELD EDITION 😼'
+    let texto1 = packstickers.text1 || global.packsticker || 'SWEET BOT'
+    let texto2 = packstickers.text2 || global.packsticker2 || 'MARY EDITION 💖'
 
     text = m.quoted?.text || text
     if (!text) {
       await react('❌')
       return conn.sendMessage(m.chat, {
-        text: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        text: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐁𝐑𝐀𝐓𝐕 ﹒ ERROR ：✿ 。
+🌸 ┇ 𝗕𝗥𝗔𝗧𝗩 ・ ERROR 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR DE USO\`\` ⚠️ —˙𖦹.꒷
 
-── *📖 USO* ╏ 🍕
+── *📖 USO* ╏ 🌸
 ➛ Responde a un mensaje o escribe texto
-➛ Ejemplo:.bratv Lux X Yallico
-😼 ➛ Garfield animará tu texto pe
+➛ Ejemplo:.bratv Sweet Bot
+💖 ➛ Mary animará tu texto porfi
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
       }, { quoted: m })
     }
@@ -58,23 +58,23 @@ const handler = async (m, { conn, text }) => {
     console.error("[BRATV ERROR]:", e)
     await react('❌')
     conn.sendMessage(m.chat, {
-      text: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+      text: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐁𝐑𝐀𝐓𝐕 ﹒ ERROR ：✿ 。
+🌸 ┇ 𝗕𝗥𝗔𝗧𝗩 ・ ERROR 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
-😼 Garfield se quedó dormido y la API también
+💖 Mary se quedó horneando y la API también
 
-── *📝 AVISO* ╏ 🍕
+── *📝 AVISO* ╏ 🌸
 ❌ ➛ Se produjo un problema
 💡 ➛ La API puede estar caída
 
-── *📊 DETALLE* ╏ 🍕
+── *📊 DETALLE* ╏ 🌸
 \`\`${e.message}\`\`
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
     }, { quoted: m })
   }
