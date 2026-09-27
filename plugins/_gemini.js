@@ -8,65 +8,67 @@ moment.locale('es')
 
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-    const ownerNum = global.owner?.[0]?.[0] || '51927174369'
+    const ownerNum = '573044563583'
 
     if (!text) {
-        let menuUso = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let menuUso = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐈𝐀 𝐕𝐎𝐙 ﹒ ${command.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗜𝗔 𝗩𝗢𝗭 ・ ${command.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
   ꒱ ׁ. ᘏ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢 ׅ 𝆬 ָ֢ ෆ
-🤖 ࣪ ꕀ.${command} ˚. ᵎᵎ
-> *"Hablando como Garfield después de 3 lasañas"*
+🍭 ࣪ ꕀ.${command} ˚. ᵎᵎ
+> *"Hablando como parcera dulce de Medellín"*
 
 .⃟𖥔 ݁. 𖦹˙— \`\`IA\`\` 🤖 —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🍕
-🤖 ➛ Responde con IA usando Gemini
+── *📝 DESCRIPCIÓN* ╏ 🌸
+💖 ➛ Responde con IA estilo colombiano parcero
 🔊 ➛ Convierte la respuesta a audio PTT
-😼 ➛ Voz de Garfield serio
+🌸 ➛ Voz dulce colombiana
 
-── *📖 USO* ╏ 🍕
+── *📖 USO* ╏ 🌸
 ➛.${command} <tu pregunta>
-➛.${command} ¿qué tal causa?
+➛.${command} ¿qué más pues parcero?
 
-── *⚙️ NOTAS* ╏ 🍕
+── *⚙️ NOTAS* ╏ 🌸
 📏 ➛ Máx 2 líneas de respuesta
-🗣️ ➛ Voz en español latino
-🍝 ➛ Garfield opina corto y al grano
+🗣️ ➛ Jerga colombiana: parce, chimba, bacano
+🍩 ➛ Mary responde corto y con dulzura paisa
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
-*Owner*: @${ownerNum}
+🌸 *SWEET BOT - Creado por Mary* 💖
+👑 *Creadora:* Mary 🍩
+🍭 +57 3044563583 🍬
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: menuUso, mentions: [ownerNum + '@s.whatsapp.net'] }, { quoted: m })
     }
 
     await m.react('⏳')
-    await m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    await m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐏𝐑𝐎𝐂𝐄𝐒𝐀𝐍𝐃𝐎 ﹒ ${command.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗣𝗥𝗢𝗖𝗘𝗦𝗔𝗡𝗗𝗢 ・ ${command.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`PENSANDO\`\` 🤖 —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🍕
-🧠 ➛ Consultando a Gemini...
-🗣️ ➛ Generando voz...
-📤 ➛ Enviando audio...
-😼 ➛ Garfield despertando de siesta...
+── *📊 ESTADO* ╏ 🌸
+🧠 ➛ Consultando a Gemini paisa...
+🗣️ ➛ Generando voz colombiana...
+🍬 ➛ Enviando audio...
+💖 ➛ Mary preparando dulces...
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
 
     try {
-        let aiUrl = `https://api.stellarwa.xyz/ai/gemini?text=${encodeURIComponent(text + ". Responde de forma normal, clara, profesional y amable. Sin jerga. Máximo 2 líneas")}&key=proyectsV2`
+        let promptColombiano = `${text}. Responde como colombiana parcera, usa jerga colombiana (parce, chimba, bacano, qué más pues, sisas). Tono dulce y amable como Mary. Máximo 2 líneas.`
+        let aiUrl = `https://api.stellarwa.xyz/ai/gemini?text=${encodeURIComponent(promptColombiano)}&key=proyectsV2`
         let aiRes = await fetch(aiUrl)
         let aiJson = await aiRes.json()
 
-        let respuesta = aiJson.result || aiJson.data || aiJson.response || "No te entendí pe causa, Garfield tiene hambre"
+        let respuesta = aiJson.result || aiJson.data || aiJson.response || "Uy parce, no te entendí, ¿me repites pues?"
 
         if(respuesta.length > 200) respuesta = respuesta.substring(0, 200) + "..."
 
@@ -77,7 +79,7 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
             timeout: 10000,
         })
 
-        let tmpFilePath = path.join(tmpdir(), `ia-pe-${Date.now()}.opus`)
+        let tmpFilePath = path.join(tmpdir(), `ia-co-${Date.now()}.opus`)
 
         await new Promise((resolve, reject) => {
             ffmpeg(url)
@@ -108,24 +110,24 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
         console.log(e)
         await m.react('❌')
         const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-        await m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        await m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐑𝐎𝐑 ﹒ ${command.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ ${command.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🍕
+── *📝 DESCRIPCIÓN* ╏ 🌸
 ❌ ➛ ${e.message}
-😴 ➛ Garfield se durmió con el error
+🍪 ➛ Mary se enredó parce
 
-── *💡 SOLUCIÓN* ╏ 🍕
-🔧 ➛ Intenta con un texto más corto
-🔧 ➛ Verifica tu conexión
-🍕 ➛ Garfield dice: menos texto, más lasaña
+── *💡 SOLUCIÓN* ╏ 🌸
+🍬 ➛ Intenta con un texto más corto
+🍬 ➛ Verifica tu conexión
+🍩 ➛ Mary dice: hágale pues otra vez
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
     }
 }
