@@ -12,30 +12,30 @@ function handler(m, { groupMetadata, command, conn, text }) {
     }
 
     if (!groupMetadata) {
-        return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n⤷ ┇ 𝐄𝐑𝐎𝐑 ﹒ TOP ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🍕\n❌ ➛ Este comando solo funciona en grupos\n━━━━━━━━━━━\n🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`)
+        return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ TOP 💖\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🌸\n❌ ➛ Este comando solo funciona en grupos\n━━━━━━━━━━━\n🌸 *SWEET BOT - Creado por Mary* 💖`)
     }
 
     if (!text) {
         await react('❌')
-        let error = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let error = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐓𝐎𝐏 ﹒ RANKING ：✿ 。
+🌸 ┇ 𝗧𝗢𝗣 ・ RANKING 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FORMATO\`\` 🏆 —˙𖦹.꒷
 
-── *📖 USO* ╏ 🍕
+── *📖 USO* ╏ 🌸
 ➛.top <motivo del ranking>
-😼 ➛ Garfield elige a los ganadores
+💖 ➛ Mary elige a los ganadores
 
-── *💡 EJEMPLOS* ╏ 🍕
+── *💡 EJEMPLOS* ╏ 🌸
 ➛.top Mejores en PVP
 ➛.top Más activos
-➛.top Más tóxicos
-➛.top Más tragones como Garfield
+➛.top Más dulces
+➛.top Más fans de los postres
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: error }, { quoted: m })
     }
@@ -43,7 +43,7 @@ function handler(m, { groupMetadata, command, conn, text }) {
     let ps = groupMetadata.participants.map(v => v.id)
     if (ps.length < 10) {
         await react('⚠️')
-        return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n⤷ ┇ 𝐀𝐕𝐈𝐒𝐎 ﹒ TOP ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🍕\n⚠️ ➛ Se necesitan mínimo 10 miembros en el grupo\n😼 ➛ Garfield necesita más competencia\n━━━━━━━━━━━\n🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`)
+        return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🌸 ┇ 𝗔𝗩𝗜𝗦𝗢 ・ TOP 💖\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🌸\n⚠️ ➛ Se necesitan mínimo 10 miembros en el grupo\n💖 ➛ Mary necesita más competencia\n━━━━━━━━━━━\n🌸 *SWEET BOT - Creado por Mary* 💖`)
     }
 
     let a = ps.getRandom()
@@ -58,20 +58,20 @@ function handler(m, { groupMetadata, command, conn, text }) {
     let j = ps.getRandom()
     let k = Math.floor(Math.random() * 70)
 
-    let emojis = ['🐱','🍕','💤','😼','🙄','😂','👀','🔥','🤑','💩','🥱','😎','😅','👇🏻','😔','🌚','🗿','✨','❤️']
+    let emojis = ['💖','🍩','🌸','🎀','🍰','🍭','🧁','✨','🍪','💕','🌷','💝','🍓','⭐','🌈','🦄','💗','🍫','🎀']
     let x = pickRandom(emojis)
 
     let vn = `https://hansxd.nasihosting.com/sound/sound${k}.mp3`
 
-    let top = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let top = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐑𝐀𝐍𝐊𝐈𝐍𝐆 ﹒ ${text.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗥𝗔𝗡𝗞𝗜𝗡𝗚 ・ ${text.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`TOP 10\`\` ${x} —˙𖦹.꒷
-😼 Garfield presenta a los elegidos
+💖 Mary presenta a los elegidos
 
-── *🏅 RANKING* ╏ 🍕
+── *🏅 RANKING* ╏ 🌸
 ${x} *1.* ${user(a)}
 ${x} *2.* ${user(b)}
 ${x} *3.* ${user(c)}
@@ -83,19 +83,16 @@ ${x} *8.* ${user(h)}
 ${x} *9.* ${user(i)}
 ${x} *10.* ${user(j)}
 
-── *📝 NOTA* ╏ 😼
+── *📝 NOTA* ╏ 💖
 🎲 ➛ Ranking 100% aleatorio y divertido
-🍕 ➛ Aprobado por Garfield
+🍩 ➛ Aprobado por Mary
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
 
     m.reply(top, null, { mentions: [a, b, c, d, e, f, g, h, i, j] })
     await react(x)
-
-    // Descomenta si quieres que mande audio
-    // conn.sendFile(m.chat, vn, 'top.mp3', null, m, true, { type: 'audioMessage', ptt: true })
 }
 
 handler.help = ['top <texto>']
