@@ -11,7 +11,7 @@ let handler = async (m, { conn, text }) => {
     const chatId = m.chat
     const db = path.join(DB_FOLDER, `${chatId}.json`)
     const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-    const ownerNum = global.owner?.[0]?.[0] || '51927174369'
+    const ownerNum = '573044563583'
 
     if (!fs.existsSync(db)) fs.writeFileSync(db, JSON.stringify([]))
 
@@ -29,83 +29,84 @@ let handler = async (m, { conn, text }) => {
 
     if (m.message?.extendedTextMessage?.text?.includes('verlista') || m.text?.includes('verlista')) {
         await react('📋')
-        let tabla = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let tabla = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐋𝐈𝐒𝐓𝐀 𝐒𝐄𝐌𝐀𝐍𝐀𝐋 ﹒ LISTA ：✿ 。
+🌸 ┇ 𝗟𝗜𝗦𝗧𝗔 𝗦𝗘𝗠𝗔𝗡𝗔𝗟 ・ LISTA 💖
 ꒰ ◞⁺⊹ ．${fechaFormato}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`REGISTROS\`\` 📅 —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🍕
-📅 ➛ Periodo: *Lunes a Sábado*
+── *📊 INFORMACIÓN* ╏ 🌸
+🍬 ➛ Periodo: *Lunes a Sábado*
 🕒 ➛ Actualizado: *${fechaFormato}*
-😼 ➛ Garfield controlando la lista
+💖 ➛ Mary controlando la lista
 
 ━━━━━━━━━━━
 `
 
         diasSemana.forEach(dia => {
             let anotadosDelDia = data.filter(v => v.dia.toLowerCase().includes(dia))
-            tabla += `── *${dia.toUpperCase()}* ╏ 🍕\n`
+            tabla += `── *${dia.toUpperCase()}* ╏ 🌸\n`
 
             if (anotadosDelDia.length === 0) {
-                tabla += `📭 ➛ Sin anotados - Garfield durmiendo\n\n`
+                tabla += `🍪 ➛ Sin anotados - Mary horneando\n\n`
             } else {
                 anotadosDelDia.forEach((v, i) => {
                     tabla += `${i+1}️⃣ ➛ *${v.nombre}* [${v.rol}]\n`
-                    tabla += `   📱 ➛ ${v.numero}\n`
+                    tabla += `   🍭 ➛ ${v.numero}\n`
                     tabla += `   📅 ➛ ${v.dia}\n\n`
                 })
             }
         })
         tabla += `━━━━━━━━━━━
-📦 ➛ Total: *${data.length}* registro${data.length !== 1 ? 's' : ''}
-😼 ➛ Lista supervisada por Garfield
+🍩 ➛ Total: *${data.length}* registro${data.length !== 1 ? 's' : ''}
+💖 ➛ Lista supervisada por Mary
 
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
-*Owner*: @${ownerNum}`
+🌸 *SWEET BOT - Creado por Mary* 💖
+👑 *Creadora:* Mary 🍩
+🍭 +57 3044563583 🍬`
         return conn.sendMessage(m.chat, { text: tabla.trim(), mentions: [ownerNum + '@s.whatsapp.net'] }, { quoted: m })
     }
 
     if (m.message?.extendedTextMessage?.text?.includes('lista') || m.text?.includes('lista')) {
         if (!diasSemana.includes(diaSemana)) {
             await react('⛔')
-            let fueraHorario = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            let fueraHorario = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐅𝐔𝐄𝐑𝐀 𝐃𝐄 𝐇𝐎𝐑𝐀𝐑𝐈𝐎 ﹒ LISTA ：✿ 。
+🌸 ┇ 𝗙𝗨𝗘𝗥𝗔 𝗗𝗘 𝗛𝗢𝗥𝗔𝗥𝗜𝗢 ・ LISTA 💖
 ꒰ ◞⁺⊹ ．${fechaFormato}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`AVISO\`\` ⛔ —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🍕
+── *📝 AVISO* ╏ 🌸
 ❌ ➛ Solo se puede anotar de
 ❌ ➛ *Lunes a Sábado*
-😴 ➛ Domingo Garfield descansa
+🍪 ➛ Domingo Mary descansa
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
             return conn.sendMessage(m.chat, { text: fueraHorario }, { quoted: m })
         }
 
         if (!text) {
             await react('❌')
-            let formato = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            let formato = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐅𝐎𝐑𝐌𝐀𝐓𝐎 ﹒ LISTA ：✿ 。
+🌸 ┇ 𝗙𝗢𝗥𝗠𝗔𝗧𝗢 ・ LISTA 💖
 ꒰ ◞⁺⊹ ．${fechaFormato}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`USO\`\` 📝 —˙𖦹.꒷
 
-── *📖 USO* ╏ 🍕
+── *📖 USO* ╏ 🌸
 ➛ Envía: .lista Nombre/Numero/Premio
 
-── *💡 EJEMPLO* ╏ 🍕
-➛ .lista Garfield/+51 927 174 369/Bot
-🍝 ➛ Premio: lasaña infinita
+── *💡 EJEMPLO* ╏ 🌸
+➛ .lista Mary/+57 304 456 3583/Dulce
+🍩 ➛ Premio: pastelitos infinitos
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
             return conn.sendMessage(m.chat, { text: formato }, { quoted: m })
         }
@@ -113,22 +114,22 @@ let handler = async (m, { conn, text }) => {
         let [nombre, numero, rol] = text.split('/').map(v => v.trim())
         if (!nombre ||!numero ||!rol) {
             await react('❌')
-            let faltan = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            let faltan = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐅𝐀𝐋𝐓𝐀𝐍 𝐃𝐀𝐓𝐎𝐒 ﹒ LISTA ：✿ 。
+🌸 ┇ 𝗙𝗔𝗟𝗧𝗔𝗡 𝗗𝗔𝗧𝗢𝗦 ・ LISTA 💖
 ꒰ ◞⁺⊹ ．${fechaFormato}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📖 FORMATO* ╏ 🍕
+── *📖 FORMATO* ╏ 🌸
 ➛ Nombre/Numero/Rol
-😿 ➛ Garfield: "Faltan datos como falta lasaña"
+💔 ➛ Mary: "Faltan datos como faltan dulces"
 
-── *💡 EJEMPLO* ╏ 🍕
+── *💡 EJEMPLO* ╏ 🌸
 ➛ fetsy/618282/bot
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
             return conn.sendMessage(m.chat, { text: faltan }, { quoted: m })
         }
@@ -136,20 +137,20 @@ let handler = async (m, { conn, text }) => {
         let yaAnotado = data.find(v => v.numero === numero && v.dia === fechaFormato)
         if (yaAnotado) {
             await react('⚠️')
-            let duplicado = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            let duplicado = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐘𝐀 𝐀𝐍𝐎𝐓𝐀𝐃𝐎 ﹒ LISTA ：✿ 。
+🌸 ┇ 𝗬𝗔 𝗔𝗡𝗢𝗧𝗔𝗗𝗢 ・ LISTA 💖
 ꒰ ◞⁺⊹ ．${fechaFormato}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`AVISO\`\` ⚠️ —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🍕
+── *📝 AVISO* ╏ 🌸
 ⚠️ ➛ ${nombre} ya fue anotado hoy
 📅 ➛ *${fechaFormato}*
-😼 ➛ Garfield dice: ya está en la lista
+💖 ➛ Mary dice: ya está en la lista
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
             return conn.sendMessage(m.chat, { text: duplicado }, { quoted: m })
         }
@@ -158,22 +159,22 @@ let handler = async (m, { conn, text }) => {
         fs.writeFileSync(db, JSON.stringify(data, null, 2))
         await react('✅')
 
-        let ok = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let ok = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐀𝐍𝐎𝐓𝐀𝐃𝐎 ﹒ LISTA ：✿ 。
+🌸 ┇ 𝗔𝗡𝗢𝗧𝗔𝗗𝗢 ・ LISTA 💖
 ꒰ ◞⁺⊹ ．${fechaFormato}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`REGISTRO\`\` ✅ —˙𖦹.꒷
 
-── *📊 DATOS* ╏ 🍕
-👤 ➛ Nombre: *${nombre}*
-📱 ➛ Número: *${numero}*
+── *📊 DATOS* ╏ 🌸
+👑 ➛ Nombre: *${nombre}*
+🍭 ➛ Número: *${numero}*
 💼 ➛ Rol: *${rol}*
 📅 ➛ Día: *${fechaFormato}*
-😼 ➛ Aprobado por Garfield
+💖 ➛ Aprobado por Mary
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: ok }, { quoted: m })
     }
