@@ -8,7 +8,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     let mime = (q.msg || q).mimetype || ''
 
     if (!q.msg?.audioMessage && !q.msg?.pttMessage && !/audio/.test(mime)) {
-        return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\nResponde a una nota de voz pe\n\n*${usedPrefix + command}*`)
+        return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🌸 Responde a una nota de voz porfi\n\n*${usedPrefix + command}*`)
     }
 
     let effect = command.toLowerCase()
@@ -34,7 +34,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
     try {
         await conn.sendMessage(m.chat, { react: { text: '🎧', key: m.key } })
         let audio = await q.download()
-        if (!audio) return m.reply('😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n❌ Audio no disponible, reenvíalo pe')
+        if (!audio) return m.reply('🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n❌ Audio no disponible, reenvíalo porfi 💖')
 
         let tmp = tmpdir()
         let name = Date.now()
@@ -55,7 +55,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
             audio: out, 
             mimetype: 'audio/mpeg',
             ptt: false,
-            fileName: `LUX_X_YALLICO_${effect}.mp3`
+            fileName: `SWEET_BOT_${effect}.mp3`
         }, { quoted: m })
 
         try { fs.unlinkSync(input) } catch {}
@@ -64,7 +64,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
 
     } catch (e) {
         console.log(e)
-        m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n❌ ${e.message.slice(0,400)}`)
+        m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n❌ ${e.message.slice(0,400)}`)
     }
 }
 
