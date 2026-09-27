@@ -1,4 +1,3 @@
-
 import moment from 'moment-timezone'
 moment.locale('es')
 
@@ -15,7 +14,7 @@ export async function before(m, { conn }) {
 
         const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
         let author = update.author || update.participants[0]
-        let catalogoImg = { url: 'https://files.evogb.win/EvvgAh.jpg' }
+        let catalogoImg = { url: 'https://files.evogb.win/2oSeLs.jpg' }
 
         for (let user of update.participants) {
           if (update.action === 'promote') {
@@ -79,7 +78,7 @@ export async function before(m, { conn }) {
 
           const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
           let author = update.author || 'Desconocido'
-          let catalogoImg = { url: 'https://files.evogb.win/EvvgAh.jpg' }
+          let catalogoImg = { url: 'https://files.evogb.win/2oSeLs.jpg' }
 
           if (update.subject) {
             let txt = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
