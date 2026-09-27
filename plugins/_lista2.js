@@ -12,7 +12,7 @@ let handler = async (m, { conn }) => {
     const db = path.join(DB_FOLDER, `${chatId}.json`)
     const fecha = moment.tz('America/Lima').format('DD/MM/YYYY')
     const hora = moment.tz('America/Lima').format('hh:mm:ss a')
-    const ownerNum = global.owner?.[0]?.[0] || '51927174369'
+    const ownerNum = '573044563583'
 
     if (!fs.existsSync(db)) fs.writeFileSync(db, JSON.stringify([]))
 
@@ -25,20 +25,20 @@ let handler = async (m, { conn }) => {
 
     if (total === 0) {
         await react('📭')
-        let vacia = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let vacia = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐁𝐎𝐑𝐑𝐀𝐑 𝐋𝐈𝐒𝐓𝐀 ﹒ LISTA ：✿ 。
+🌸 ┇ 𝗕𝗢𝗥𝗔𝗥 𝗟𝗜𝗦𝗧𝗔 ・ LISTA 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`LISTA VACÍA\`\` 🗑️ —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🍕
-📭 ➛ La lista de este grupo ya está vacía
-📭 ➛ No hay registros para borrar
-😴 ➛ Garfield: "Ni siquiera hay lasaña para borrar"
+── *📝 AVISO* ╏ 🌸
+🍪 ➛ La lista de este grupo ya está vacía
+🍪 ➛ No hay registros para borrar
+💔 ➛ Mary: "Ni siquiera hay dulces para borrar"
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: vacia }, { quoted: m })
     }
@@ -46,26 +46,26 @@ let handler = async (m, { conn }) => {
     await react('🗑️')
     fs.writeFileSync(db, JSON.stringify([]))
 
-    let texto = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let texto = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐁𝐎𝐑𝐑𝐀𝐃𝐎 ﹒ LISTA ：✿ 。
+🌸 ┇ 𝗕𝗢𝗥𝗥𝗔𝗗𝗢 ・ LISTA 💖
 ꒰ ◞⁺⊹ ．${fecha} ${hora}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`BORRADO EXITOSO\`\` 🗑️ —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🍕
+── *📊 INFORMACIÓN* ╏ 🌸
 🗑️ ➛ Se eliminaron: *${total}* registro${total > 1 ? 's' : ''}
 📅 ➛ Rango: *Lunes a Sábado*
 ⏰ ➛ Hora: *${hora}*
-😼 ➛ Garfield se comió la lista
+💖 ➛ Mary limpió la lista
 
-── *📦 ESTADO* ╏ 🍕
+── *📦 ESTADO* ╏ 🌸
 ✅ ➛ Lista de este grupo reiniciada
-🍝 ➛ Lista limpia como plato de lasaña
+🍩 ➛ Lista limpia como bandeja de pastelitos
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
-*Admin*: Comando ejecutado por Garfield
+🌸 *SWEET BOT - Creado por Mary* 💖
+👑 *Admin*: Comando ejecutado por Mary 🍩
 ━━━━━━━━━━━`
 
     return conn.sendMessage(m.chat, { text: texto }, { quoted: m })
