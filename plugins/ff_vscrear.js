@@ -1,4 +1,3 @@
-
 import moment from 'moment-timezone'
 moment.locale('es')
 
@@ -7,19 +6,19 @@ let vs = global.vsData = global.vsData || {}
 const crear = async (m, { conn, args, usedPrefix, command }) => {
     const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
     if (args.length < 2) {
-      let error = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+      let error = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ VS ：✿ 。
+🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ VS 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 USO* ╏ 🍕
+── *📝 USO* ╏ 🌸
 ➛${usedPrefix + command} 14 PE APOS
-😼 ➛ Garfield dice: pon hora y país pe
+💖 ➛ Mary dice: pon hora y país porfi
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
       return conn.reply(m.chat, error, m);
     }
@@ -31,19 +30,19 @@ const crear = async (m, { conn, args, usedPrefix, command }) => {
     const pais = args[1].toUpperCase();
     const diferenciasHorarias = { CL: 2, AR: 2, PE: 0, BO: 2 };
     if (!(pais in diferenciasHorarias)) {
-      let error = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+      let error = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ PAIS ：✿ 。
+🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ PAIS 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ⚠️ —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🍕
+── *📝 AVISO* ╏ 🌸
 ⚠️ ➛ Usa PE, CL, AR o BO
-😼 ➛ Garfield solo conoce esos países
+💖 ➛ Mary solo conoce esos países
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
       return conn.reply(m.chat, error, m);
     }
@@ -69,13 +68,13 @@ const crear = async (m, { conn, args, usedPrefix, command }) => {
 
     let diseño = {}
     if(tipo === 'FEM'){
-        diseño = { header: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🌸⃟💕 ${groupName} 💕⃟🌸\nㅤ ˗ˏˋ ꒰ 😻 ꒱ ˎˊ˗`, icon: '😻', suplente: '🧁' }
+        diseño = { header: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🌸⃟💕 ${groupName} 💕⃟🌸\nㅤ ˗ˏˋ ꒰ 💖 ꒱ ˎˊ˗`, icon: '💖', suplente: '🍩' }
     }
     if(tipo === 'MASC'){
-        diseño = { header: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n👑˗ˏˋ ꒰ ${groupName} ꒱ ˎˊ˗👑\n✧･ﾟ: *✧･ﾟ:* 🍗 *:･ﾟ✧*:･ﾟ✧`, icon: '🍗', suplente: '🥂' }
+        diseño = { header: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n👑˗ˏˋ ꒰ ${groupName} ꒱ ˎˊ˗👑\n✧･ﾟ: *✧･ﾟ:* 🍬 *:･ﾟ✧*:･ﾟ✧`, icon: '🍬', suplente: '🧁' }
     }
     if(tipo === 'MIXTO'){
-        diseño = { header: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🌌⃟✨ ${groupName} ✨⃟🌌\n　★彡.　☆`, icon: '🍕', suplente: '☄️' }
+        diseño = { header: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🌌⃟✨ ${groupName} ✨⃟🌌\n　★彡.　☆`, icon: '🌸', suplente: '🍭' }
     }
 
     vs[m.chat] = vs[m.chat] || { salas: [], tipo, diseño, groupName }
@@ -98,17 +97,17 @@ const crear = async (m, { conn, args, usedPrefix, command }) => {
 const anotar = async (m, { conn, args, usedPrefix, command }) => {
     const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
     if (!vs[m.chat] ||!vs[m.chat].salas.length) {
-      return conn.reply(m.chat, `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n❌ ➛ No hay VS activa\n😴 ➛ Garfield dice: crea una primero\n━━━━━━━━━━━\n🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`, m)
+      return conn.reply(m.chat, `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n❌ ➛ No hay VS activa\n🍪 ➛ Mary dice: crea una primero\n━━━━━━━━━━━\n🌸 *SWEET BOT - Creado por Mary* 💖`, m)
     }
     let salaNum = parseInt(args[0]) - 1
     if(isNaN(salaNum)) salaNum = 0
 
     let sala = vs[m.chat].salas[salaNum]
-    if(!sala) return conn.reply(m.chat, `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n❌ ➛ Sala ${args[0]} no existe\n━━━━━━━━━━━\n🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`, m)
+    if(!sala) return conn.reply(m.chat, `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n❌ ➛ Sala ${args[0]} no existe\n━━━━━━━━━━━\n🌸 *SWEET BOT - Creado por Mary* 💖`, m)
 
     let users = m.mentionedJid || []
     if(users.length === 0) {
-      return conn.reply(m.chat, `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n❌ ➛ Menciona a alguien\nEj:.anotar 1 @pepito @juana\n━━━━━━━━━━━\n🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`, m)
+      return conn.reply(m.chat, `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n❌ ➛ Menciona a alguien\nEj:.anotar 1 @pepito @juana\n━━━━━━━━━━━\n🌸 *SWEET BOT - Creado por Mary* 💖`, m)
     }
 
     for(let user of users){
@@ -116,15 +115,15 @@ const anotar = async (m, { conn, args, usedPrefix, command }) => {
         sala.suplentes = sala.suplentes.filter(v => v!== user)
 
         if (command === 'anotar') {
-            if (sala.jugadores.length >= sala.cantidad) return conn.reply(m.chat, `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n⚠️ ➛ Sala ${salaNum+1} llena\n🍕 Garfield: ya no entra nadie más\n━━━━━━━━━━━`, m)
+            if (sala.jugadores.length >= sala.cantidad) return conn.reply(m.chat, `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n⚠️ ➛ Sala ${salaNum+1} llena\n💖 Mary: ya no entra nadie más\n━━━━━━━━━━━`, m)
             sala.jugadores.push(user)
         }
         if (command === 'suplente') {
-            if (sala.suplentes.length >= 2) return conn.reply(m.chat, `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n⚠️ ➛ Suplentes sala ${salaNum+1} llenos\n━━━━━━━━━━━`, m)
+            if (sala.suplentes.length >= 2) return conn.reply(m.chat, `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n⚠️ ➛ Suplentes sala ${salaNum+1} llenos\n━━━━━━━━━━━`, m)
             sala.suplentes.push(user)
         }
         if (command === 'salir') {
-            await conn.reply(m.chat, `😼 ➛ @${user.split('@')[0]} salió de la sala ${salaNum+1} - Garfield lo sacó`, m, { mentions: [user] })
+            await conn.reply(m.chat, `💖 ➛ @${user.split('@')[0]} salió de la sala ${salaNum+1} - Mary lo sacó`, m, { mentions: [user] })
         }
     }
     await actualizarLista(m.chat, conn, usedPrefix)
@@ -163,7 +162,7 @@ ${todasSalas}
 │ ${d.icon} = Quiero JUGAR
 │ ${d.suplente} = Quiero SUPLENTE
 ╰───────────────────
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`;
+🌸 *SWEET BOT - Creado por Mary* 💖`;
 
     let mentions = []
     data.salas.forEach(s => mentions.push(...s.jugadores,...s.suplentes))
