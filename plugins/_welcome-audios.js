@@ -25,52 +25,52 @@ let handler = async (m, { conn, command }) => {
     await react('🎵')
 
     if (!m.quoted) {
-      let uso = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+      let uso = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐀𝐔𝐃𝐈𝐎 ﹒ ${type.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗔𝗨𝗗𝗜𝗢 ・ ${type.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🍕
+── *📝 AVISO* ╏ 🌸
 ❌ ➛ Debes responder a un audio
-😼 ➛ Garfield dice: responde al audio pe
+💖 ➛ Mary dice: responde al audio porfi
 
-── *📖 USO* ╏ 🍕
+── *📖 USO* ╏ 🌸
 ➛ Envía o reenvía un audio
 ➛ Responde al audio con:.${command}
 
-── *💡 EJEMPLO* ╏ 🍕
+── *💡 EJEMPLO* ╏ 🌸
 ➛ Manda un audio → responde → .${command}
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
       return conn.sendMessage(m.chat, { text: uso }, { quoted: m })
     }
 
     if (!mime ||!/audio/.test(mime)) {
       await react('❌')
-      return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n❌ Responde a un audio válido pe - Garfield quiere escuchar`, { quoted: m })
+      return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n❌ Responde a un audio válido porfi - Mary quiere escuchar`, { quoted: m })
     }
 
     let buffer = await q.download()
     chat[`audio${type}`] = buffer.toString('base64')
 
-    let ok = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let ok = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐆𝐔𝐀𝐑𝐃𝐀𝐃𝐎 ﹒ ${type.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗚𝗨𝗔𝗥𝗗𝗔𝗗𝗢 ・ ${type.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`AUDIO GUARDADO\`\` ✅ —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🍕
+── *📊 INFORMACIÓN* ╏ 🌸
 ✅ ➛ Audio de *${type}* guardado
 🔊 ➛ Se reproducirá cuando alguien ${type === 'welcome'? 'entre' : type === 'bye'? 'salga' : 'sea kickeado'}
-😼 ➛ Garfield aprobó el audio
+💖 ➛ Mary aprobó el audio
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: ok }, { quoted: m })
   }
@@ -78,38 +78,38 @@ let handler = async (m, { conn, command }) => {
   if (command.startsWith('delaudio')) {
     await react('🗑️')
     if (!chat[`audio${type}`]) {
-      let vacio = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+      let vacio = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐍𝐎 𝐂𝐎𝐍𝐅𝐈𝐆𝐔𝐑𝐀𝐃𝐎 ﹒ ${type.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗡𝗢 𝗖𝗢𝗡𝗙𝗜𝗚𝗨𝗥𝗔𝗗𝗢 ・ ${type.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`AVISO\`\` 📭 —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🍕
-📭 ➛ No hay un audio de *${type}* configurado
-😴 ➛ Garfield dice: no hay nada que borrar
+── *📝 AVISO* ╏ 🌸
+🍪 ➛ No hay un audio de *${type}* configurado
+💔 ➛ Mary dice: no hay nada que borrar
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
       return conn.sendMessage(m.chat, { text: vacio }, { quoted: m })
     }
 
     delete chat[`audio${type}`]
-    let del = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let del = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐋𝐈𝐌𝐈𝐍𝐀𝐃𝐎 ﹒ ${type.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗘𝗟𝗜𝗠𝗜𝗡𝗔𝗗𝗢 ・ ${type.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`AUDIO ELIMINADO\`\` 🗑️ —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🍕
+── *📊 INFORMACIÓN* ╏ 🌸
 🗑️ ➛ Audio de *${type}* eliminado
 ✅ ➛ Ya no se reproducirá
-😼 ➛ Garfield lo borró durmiendo
+💖 ➛ Mary lo borró horneando
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: del }, { quoted: m })
   }
