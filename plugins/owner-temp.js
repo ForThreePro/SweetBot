@@ -5,7 +5,7 @@ moment.locale('es')
 const filePath = './temp_groups.json'
 
 const OWNER_NUMBERS = [
-  '51927174369'
+  '573005337612'
 ]
 
 if (!fs.existsSync(filePath)) fs.writeFileSync(filePath, '[]')
@@ -27,20 +27,20 @@ setInterval(async () => {
     if (timeLeft <= 300000 && timeLeft > 0 &&!i.warned) {
       try {
         await global.conn.sendMessage(i.id, {
-          text: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+          text: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐓𝐄𝐌𝐏𝐎𝐑𝐈𝐙𝐀𝐃𝐎𝐑 ﹒ AVISO ：✿ 。
+🌸 ┇ 𝗧𝗘𝗠𝗣𝗢𝗥𝗜𝗭𝗔𝗗𝗢𝗥 ・ AVISO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`5 MINUTOS\`\` ⏰ —˙𖦹.꒷
-😼 Garfield se está despidiendo...
+💖 Mary se está despidiendo...
 
-── *📝 AVISO* ╏ 🍕
+── *📝 AVISO* ╏ 🌸
 ⏰ ➛ El bot se saldrá de este grupo en 5 minutos
-🍝 ➛ Última porción de lasaña servida
+🍩 ➛ Última porción de dulce servida
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         })
         i.warned = true
@@ -53,20 +53,20 @@ setInterval(async () => {
       while (attempts < 3) {
         try {
           await global.conn.sendMessage(i.id, {
-            text: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            text: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐓𝐄𝐌𝐏𝐎𝐑𝐈𝐙𝐀𝐃𝐎𝐑 ﹒ SALIDA ：✿ 。
+🌸 ┇ 𝗧𝗘𝗠𝗣𝗢𝗥𝗜𝗭𝗔𝗗𝗢𝗥 ・ SALIDA 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`SALIENDO\`\` 👋 —˙𖦹.꒷
-😼 Garfield se va a dormir a otro grupo
+💖 Mary se va a hornear a otro grupo
 
-── *📝 AVISO* ╏ 🍕
+── *📝 AVISO* ╏ 🌸
 ⏰ ➛ Temporizador finalizado. Saliendo...
-🍕 ➛ Gracias por la lasaña
+🍩 ➛ Gracias por los dulces
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
           })
           await new Promise(r => setTimeout(r, 1500))
@@ -116,13 +116,13 @@ let handler = async (m, { conn, args, command }) => {
 
   if (!isOwner(m)) {
     await react(conn, m, "❌")
-    return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ TEMP ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🍕\n❌ ➛ No tienes permiso para usar este comando\n😼 ➛ Solo el jefe de Garfield puede usar esto\n━━━━━━━━━━━\n🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`)
+    return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ TEMP 💖\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🌸\n❌ ➛ No tienes permiso para usar este comando\n💖 ➛ Solo la jefa de Mary puede usar esto\n━━━━━━━━━━━\n🌸 *SWEET BOT - Creado por Mary* 💖`)
   }
 
   if (command === 'templist') {
     if (global.tempGroups.length === 0) {
       await react(conn, m, "⚠️")
-      return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n⤷ ┇ 𝐋𝐈𝐒𝐓𝐀 ﹒ TEMP ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🍕\n⚠️ ➛ No hay grupos con temporizador activo\n😴 ➛ Garfield está sin tareas por ahora\n━━━━━━━━━━━\n🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`)
+      return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🌸 ┇ 𝗟𝗜𝗦𝗧𝗔 ・ TEMP 💖\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🌸\n⚠️ ➛ No hay grupos con temporizador activo\n🍪 ➛ Mary está sin tareas por ahora\n━━━━━━━━━━━\n🌸 *SWEET BOT - Creado por Mary* 💖`)
     }
 
     let list = global.tempGroups.map((v, i) => {
@@ -130,23 +130,23 @@ let handler = async (m, { conn, args, command }) => {
       return `│ ${i+1}. *${v.name}*\n│ ⏰ Falta: ${msToTime(timeLeft)}`
     }).join('\n')
 
-    let texto = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let texto = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐋𝐈𝐒𝐓𝐀 ﹒ ACTIVA ：✿ 。
+🌸 ┇ 𝗟𝗜𝗦𝗧𝗔 ・ ACTIVA 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`GRUPOS\`\` 📋 —˙𖦹.꒷
-😼 Grupos donde Garfield está de visita
+💖 Grupos donde Mary está de visita
 
-── *📊 GRUPOS* ╏ 🍕
+── *📊 GRUPOS* ╏ 🌸
 ${list}
 
-── *📝 NOTA* ╏ 🍕
+── *📝 NOTA* ╏ 🌸
 💡 ➛ Usa tempcancel para cancelar
-🍕 ➛ Lux X Yallico controla todo
+🍩 ➛ Sweet Bot controla todo
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
     await react(conn, m, "📋")
     return m.reply(texto)
@@ -154,31 +154,31 @@ ${list}
 
   if (!m.isGroup) {
     await react(conn, m, "❌")
-    return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ TEMP ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🍕\n❌ ➛ Solo funciona en grupos\n━━━━━━━━━━━\n🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`)
+    return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ TEMP 💖\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🌸\n❌ ➛ Solo funciona en grupos\n━━━━━━━━━━━\n🌸 *SWEET BOT - Creado por Mary* 💖`)
   }
 
   if (!args[0]) {
     await react(conn, m, "❌")
-    let error = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let error = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐓𝐄𝐌𝐏𝐎𝐑𝐈𝐙𝐀𝐃𝐎𝐑 ﹒ FORMATO ：✿ 。
+🌸 ┇ 𝗧𝗘𝗠𝗣𝗢𝗥𝗜𝗭𝗔𝗗𝗢𝗥 ・ FORMATO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`USO\`\` ⏰ —˙𖦹.꒷
-😼 Configura cuánto se quedará Garfield
+💖 Configura cuánto se quedará Mary
 
-── *📖 USO* ╏ 🍕
+── *📖 USO* ╏ 🌸
 ➛.temporizador 30d
 ➛.temporizador 5h
 ➛.temporizador 1d5h30m
 
-── *💡 EJEMPLOS* ╏ 🍕
+── *💡 EJEMPLOS* ╏ 🌸
 ➛ 1m = 1 minuto
 ➛ 2h = 2 horas
 ➛ 3d = 3 días
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
     return m.reply(error)
   }
@@ -196,7 +196,7 @@ ${list}
   }
   if (ms < 60000) {
     await react(conn, m, "❌")
-    return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ TEMP ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🍕\n❌ ➛ Mínimo 1 minuto\n😼 ➛ Garfield necesita al menos comer algo pe\n━━━━━━━━━━━\n🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`)
+    return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ TEMP 💖\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🌸\n❌ ➛ Mínimo 1 minuto\n💖 ➛ Mary necesita al menos comer algo porfi\n━━━━━━━━━━━\n🌸 *SWEET BOT - Creado por Mary* 💖`)
   }
 
   const exitTime = Date.now() + ms
@@ -211,25 +211,25 @@ ${list}
 
   const fechaSalida = moment.tz(exitTime, 'America/Lima').format('DD/MM/YYYY hh:mm:ss a')
 
-  let ok = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+  let ok = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐓𝐄𝐌𝐏𝐎𝐑𝐈𝐙𝐀𝐃𝐎𝐑 ﹒ ACTIVADO ：✿ 。
+🌸 ┇ 𝗧𝗘𝗠𝗣𝗢𝗥𝗜𝗭𝗔𝗗𝗢𝗥 ・ ACTIVADO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`PROGRAMADO\`\` ⏰ —˙𖦹.꒷
-😼 Garfield se quedará un rato
+💖 Mary se quedará un rato
 
-── *📊 INFORMACIÓN* ╏ 🍕
+── *📊 INFORMACIÓN* ╏ 🌸
 🏠 ➛ Grupo: ${groupName}
 ⏰ ➛ Salida en: ${msToTime(ms)}
 📅 ➛ Fecha: ${fechaSalida}
 
-── *📝 NOTA* ╏ 🍕
+── *📝 NOTA* ╏ 🌸
 🗑️ ➛ Usa tempcancel para cancelar
-🍕 ➛ Lux X Yallico programó la visita
+🍩 ➛ Sweet Bot programó la visita
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
   await react(conn, m, "✅")
   return m.reply(ok)
@@ -241,38 +241,38 @@ handler.before = async (m, { conn, command }) => {
 
     if (!isOwner(m)) {
       await react(conn, m, "❌")
-      return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ TEMP ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🍕\n❌ ➛ No tienes permiso para usar este comando\n━━━━━━━━━━━\n🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`)
+      return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ TEMP 💖\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🌸\n❌ ➛ No tienes permiso para usar este comando\n━━━━━━━━━━━\n🌸 *SWEET BOT - Creado por Mary* 💖`)
     }
 
     if (!m.isGroup) {
       await react(conn, m, "❌")
-      return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ TEMP ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🍕\n❌ ➛ Solo funciona en grupos\n━━━━━━━━━━━\n🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`)
+      return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ TEMP 💖\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🌸\n❌ ➛ Solo funciona en grupos\n━━━━━━━━━━━\n🌸 *SWEET BOT - Creado por Mary* 💖`)
     }
 
     let index = global.tempGroups.findIndex(v => v.id === m.chat)
     if (index === -1) {
       await react(conn, m, "⚠️")
-      return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n⤷ ┇ 𝐀𝐕𝐈𝐒𝐎 ﹒ TEMP ：✿ 。\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🍕\n⚠️ ➛ No hay temporizador activo\n━━━━━━━━━━━\n🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`)
+      return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🌸 ┇ 𝗔𝗩𝗜𝗦𝗢 ・ TEMP 💖\n꒰ ◞⁺⊹ ．${fecha}\n\n── *📝 AVISO* ╏ 🌸\n⚠️ ➛ No hay temporizador activo\n━━━━━━━━━━━\n🌸 *SWEET BOT - Creado por Mary* 💖`)
     }
 
     const groupName = global.tempGroups[index].name
     global.tempGroups.splice(index, 1)
     saveTempGroups()
 
-    let cancel = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let cancel = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐓𝐄𝐌𝐏𝐎𝐑𝐈𝐙𝐀𝐃𝐎𝐑 ﹒ CANCELADO ：✿ 。
+🌸 ┇ 𝗧𝗘𝗠𝗣𝗢𝗥𝗜𝗭𝗔𝗗𝗢𝗥 ・ CANCELADO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ELIMINADO\`\` 🗑️ —˙𖦹.꒷
-😼 Garfield decidió quedarse más tiempo
+💖 Mary decidió quedarse más tiempo
 
-── *📊 INFORMACIÓN* ╏ 🍕
+── *📊 INFORMACIÓN* ╏ 🌸
 🏠 ➛ Grupo: ${groupName}
 ✅ ➛ Estado: Cancelado
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
     await react(conn, m, "🗑️")
     return m.reply(cancel)
