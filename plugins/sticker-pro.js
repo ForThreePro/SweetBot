@@ -10,18 +10,18 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
     }
 
     const error = (msg) => {
-        return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐒𝐓𝐈𝐂𝐊𝐄𝐑 ﹒ ERROR ：✿ 。
+🌸 ┇ 𝗦𝗧𝗜𝗖𝗞𝗘𝗥 ・ ERROR 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 😼
+── *📝 AVISO* ╏ 💖
 ❌ ➛ ${msg}
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
     }
 
@@ -37,8 +37,8 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
         if (!img) return error('Responde a un *sticker*')
 
         try {
-            let pack = packname || 'LUX X YALLICO'
-            let auth = author || 'GARFIELD EDITION 😼'
+            let pack = packname || 'SWEET BOT'
+            let auth = author || 'MARY EDITION 💖'
             let stiker = await addExif(img, pack, auth)
             await conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
             await react('✅')
@@ -56,8 +56,8 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
 
         await react('🖌️')
         let img = await q.download()
-        let pack = global.packsticker || 'LUX X YALLICO'
-        let auth = global.packsticker2 || 'GARFIELD EDITION 😼'
+        let pack = global.packsticker || 'SWEET BOT'
+        let auth = global.packsticker2 || 'MARY EDITION 💖'
         let stiker = await sticker(img, false, pack, auth)
 
         await conn.sendFile(m.chat, stiker, 'sticker.webp', '', m)
@@ -115,7 +115,7 @@ let handler = async (m, { conn, text, usedPrefix, command, args }) => {
             await react('🎨')
             const json = await axios.post('https://btzqc.betabotz.eu.org/generate', obj, { headers: { 'Content-Type': 'application/json' }})
             const buffer = Buffer.from(json.data.result.image, 'base64')
-            const stiker = await sticker(buffer, false, 'LUX X YALLICO', 'GARFIELD EDITION 😼')
+            const stiker = await sticker(buffer, false, 'SWEET BOT', 'MARY EDITION 💖')
 
             if (stiker) {
                 await conn.sendFile(m.chat, stiker, 'quotly.webp', '', m)
