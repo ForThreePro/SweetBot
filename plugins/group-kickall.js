@@ -4,7 +4,7 @@ moment.locale('es')
 let handler = async (m, { conn }) => {
     const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
     const ownerNumber = '51927174369@s.whatsapp.net'
-    
+
     const react = async (text) => {
         try { await conn.sendMessage(m.chat, { react: { text: text, key: m.key } }) } catch {}
     }
@@ -12,25 +12,27 @@ let handler = async (m, { conn }) => {
     if (m.sender !== ownerNumber) {
         await react('❌')
         return conn.sendMessage(m.chat, { 
-            text: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            text: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐒𝐈𝐒𝐓𝐄𝐌𝐀 ﹒ ACCESO DENEGADO ：✿ 。
+🌸 ┇ 𝗦𝗜𝗦𝗧𝗘𝗠𝗔 ・ ACCESO DENEGADO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`DENEGADO\`\` 🔴 —˙𖦹.꒷
-😼 Solo mi dueño puede usar esto pe
+💖 Solo mi dueña puede usar esto porfi
 
-── *📊 INFO* ╏ 🍕
+── *📊 INFO* ╏ 🌸
 🔒 ➛ Comando: *.kickall*
-👑 ➛ Solo: +51 927 174 369
+👑 ➛ Solo: Mary
 
+━━━━━━━━━━━
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`, mentions: [m.sender] }, { quoted: m })
     }
 
-    if (!m.isGroup) return m.reply('😼 Solo en grupos pe')
+    if (!m.isGroup) return m.reply('💖 Solo en grupos porfi')
 
     try {
-        await react('😼')
+        await react('💖')
         let groupMetadata = await conn.groupMetadata(m.chat)
         let botId = conn.user.jid
         let botLid = conn.user.lid || ''
@@ -39,32 +41,34 @@ let handler = async (m, { conn }) => {
         let toKick = groupMetadata.participants
             .map(p => p.id)
             .filter(id => {
-                if (id === botId) return false // JID del bot
-                if (id === botLid) return false // LID del bot (nuevo WhatsApp)
-                if (id === ownerNumber) return false // Tú
-                if (id.includes('51927174369')) return false // Por si acaso tu LID
+                if (id === botId) return false
+                if (id === botLid) return false
+                if (id === ownerNumber) return false
+                if (id.includes('51927174369')) return false
                 return true
             })
 
         if (!toKick.length) {
-            await react('😴')
-            return m.reply('😼 No hay nadie para sacar pe, solo estamos tú y yo 🍕')
+            await react('🍪')
+            return m.reply('💖 No hay nadie para sacar porfi, solo estamos tú y yo 🍩')
         }
 
         await conn.sendMessage(m.chat, { 
-            text: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            text: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐆𝐑𝐔𝐏𝐎 ﹒ KICKALL INICIADO ：✿ 。
+🌸 ┇ 𝗚𝗥𝗨𝗣𝗢 ・ KICKALL INICIADO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`PURGA\`\` 🔴 —˙𖦹.꒷
-😼 Sacando a todos menos al jefe y a Garfield pe
+💖 Sacando a todos menos a la jefa y a Mary porfi
 
-── *📊 INFO* ╏ 🍕
+── *📊 INFO* ╏ 🌸
 🔴 ➛ Total: *${toKick.length}*
 👑 ➛ Se quedan: *Tú y el bot*
-😼 ➛ El bot: *NO se sale*
+💖 ➛ El bot: *NO se sale*
 
+━━━━━━━━━━━
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`, mentions: [m.sender] }, { quoted: m })
 
         for (let id of toKick) {
@@ -76,25 +80,25 @@ let handler = async (m, { conn }) => {
 
         await react('🔥')
         await conn.sendMessage(m.chat, { 
-            text: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            text: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐆𝐑𝐔𝐏𝐎 ﹒ COMPLETADO ：✿ 。
+🌸 ┇ 𝗚𝗥𝗨𝗣𝗢 ・ COMPLETADO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`LIMPIO\`\` 🟢 —˙𖦹.꒷
-😼 Listo pe, solo quedamos nosotros
+💖 Listo porfi, solo quedamos nosotros
 
-── *📊 RESULTADO* ╏ 🍕
+── *📊 RESULTADO* ╏ 🌸
 🗑️ ➛ Eliminados: *${toKick.length}*
 👑 ➛ Quedan: *Tú y yo (bot)*
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━` 
         })
 
     } catch (e) {
-        return m.reply(`❌ ${e.message}\n😼 El bot debe ser admin pe`)
+        return m.reply(`❌ ${e.message}\n💖 El bot debe ser admin porfi`)
     }
 }
 
