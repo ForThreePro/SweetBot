@@ -17,38 +17,39 @@ const CLIP_SECONDS = 30
 const handler = async (m, { conn, command }) => {
     try {
         const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-        const ownerNum = global.owner?.[0]?.[0] || '51927174369'
+        const ownerNum = '573044563583'
         let q = m.quoted? m.quoted : m
         let mime = (q.msg || q).mimetype || ''
 
         if (!mime ||!/audio|video/.test(mime)) {
-            let menuUso = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            let menuUso = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐁𝐔𝐒𝐂𝐀𝐃𝐎𝐑 ﹒ ${command.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗕𝗨𝗦𝗖𝗔𝗗𝗢𝗥 ・ ${command.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
   ꒱ ׁ. ᘏ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢 ׅ 𝆬 ָ֢ ෆ
-🎵 ࣪ ꕀ.${command} ˚. ᵎᵎ
-> *"Hasta Garfield reconoce música mientras come lasaña"*
+🍭 ࣪ ꕀ.${command} ˚. ᵎᵎ
+> *"Hasta Mary reconoce música mientras hornea pastelitos"*
 
 .⃟𖥔 ݁. 𖦹˙— \`\`BUSCADOR\`\` 🔍 —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🍕
-🎵 ➛ Identifica canciones respondiendo a audios o videos
-🎵 ➛.song = Descarga el audio
-🎵 ➛.letra = Muestra la letra + descarga el audio
+── *📝 DESCRIPCIÓN* ╏ 🌸
+🍬 ➛ Identifica canciones respondiendo a audios o videos
+🍩 ➛.song = Descarga el audio
+💖 ➛.letra = Muestra la letra + descarga el audio
 
-── *📖 USO* ╏ 🍕
+── *📖 USO* ╏ 🌸
 1️⃣ ➛ Responde a un audio con:.*${command}*
 2️⃣ ➛ Responde a un video con:.*${command}*
 
-── *⏱️ NOTA* ╏ 🍕
-📦 ➛ Analiza los primeros *${CLIP_SECONDS}s* de audio
-😼 ➛ Garfield escucha mejor con lasaña
+── *⏱️ NOTA* ╏ 🌸
+🍪 ➛ Analiza los primeros *${CLIP_SECONDS}s* de audio
+💖 ➛ Mary escucha mejor con dulces
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
-*Owner*: @${ownerNum}
+🌸 *SWEET BOT - Creado por Mary* 💖
+👑 *Creadora:* Mary 🍩
+🍭 +57 3044563583 🍬
 ━━━━━━━━━━━`
             return conn.sendMessage(m.chat, { text: menuUso, mentions: [ownerNum + '@s.whatsapp.net'] }, { quoted: m })
         }
@@ -57,21 +58,21 @@ const handler = async (m, { conn, command }) => {
         let buffer = await q.download()
         if (!buffer) throw new Error('Error al descargar el archivo')
 
-        await m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        await m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐃𝐄𝐓𝐄𝐂𝐓𝐀𝐍𝐃𝐎 ﹒ ${command.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗗𝗘𝗧𝗘𝗖𝗧𝗔𝗡𝗗𝗢 ・ ${command.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`PROCESANDO\`\` 🎶 —˙𖦹.꒷
 
-── *📊 PROCESO* ╏ 🍕
+── *📊 PROCESO* ╏ 🌸
 🔍 ➛ Analizando ${CLIP_SECONDS}s de audio...
-📤 ➛ Subiendo a servidor temporal...
+🍬 ➛ Subiendo a servidor temporal...
 🎶 ➛ Buscando coincidencia...
-😼 ➛ Garfield afinando sus bigotes...
+💖 ➛ Mary afinando sus pastelitos...
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
 
         let clip = await prepareClip(buffer, CLIP_SECONDS)
@@ -98,27 +99,27 @@ const handler = async (m, { conn, command }) => {
         if(command === 'song'){
             await conn.sendMessage(m.chat, {
                 image: thumb,
-                caption: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+                caption: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐍𝐂𝐎𝐍𝐓𝐑𝐀𝐃𝐎 ﹒ SONG ：✿ 。
+🌸 ┇ 𝗘𝗡𝗖𝗢𝗡𝗧𝗥𝗔𝗗𝗢 ・ SONG 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`RESULTADO\`\` 🎵 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`RESULTADO\`\` 🍭 —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🍕
-📌 ➛ Título: *${title}*
-👤 ➛ Artista: *${author.name}*
-👁️ ➛ Vistas: *${vistas}*
+── *📊 INFORMACIÓN* ╏ 🌸
+🍬 ➛ Título: *${title}*
+👑 ➛ Artista: *${author.name}*
+💖 ➛ Vistas: *${vistas}*
 ⏱️ ➛ Duración: *${timestamp}*
 🔗 ➛ Link: ${shortUrl}
-😼 ➛ Encontrado por Garfield
+🌸 ➛ Encontrado por Mary
 
-── *📥 DESCARGA* ╏ 🍕
+── *📥 DESCARGA* ╏ 🌸
 ⬇️ ➛ Enviando audio...
-🍝 ➛ Preparando lasaña sonora...
+🍩 ➛ Preparando dulce sonoro...
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
             }, { quoted: m })
 
@@ -134,28 +135,28 @@ const handler = async (m, { conn, command }) => {
             await m.react('📝')
             const lyricsRes = await fetch(`https://api.lyrics.ovh/v1/${encodeURIComponent(song.artist)}/${encodeURIComponent(song.title)}`).then(r => r.json())
             let lyrics = lyricsRes.lyrics || 'No se encontró la letra'
-            if(lyrics.length > 1500) lyrics = lyrics.slice(0, 1500) + '\n\n...Letra muy larga, como siesta de Garfield 😴'
+            if(lyrics.length > 1500) lyrics = lyrics.slice(0, 1500) + '\n\n...Letra muy larga, como fila de pastelitos 🍩'
 
             await conn.sendMessage(m.chat, {
-                text: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+                text: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐋𝐄𝐓𝐑𝐀 ﹒ LETRA ：✿ 。
+🌸 ┇ 𝗟𝗘𝗧𝗥𝗔 ・ LETRA 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`LETRA\`\` 🎤 —˙𖦹.꒷
 
-── *📊 CANCIÓN* ╏ 🍕
-📌 ➛ *${title}* - *${author.name}*
-😼 ➛ Garfield tararea esto
+── *📊 CANCIÓN* ╏ 🌸
+🍬 ➛ *${title}* - *${author.name}*
+💖 ➛ Mary tararea esto
 
-── *📜 LETRA* ╏ 🍕
+── *📜 LETRA* ╏ 🌸
 \`\`${lyrics}\`\`
 
-── *📥 DESCARGA* ╏ 🍕
+── *📥 DESCARGA* ╏ 🌸
 ⬇️ ➛ Enviando audio...
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
             }, { quoted: m })
 
@@ -171,24 +172,24 @@ const handler = async (m, { conn, command }) => {
     } catch(e) {
         await m.react('❌')
         const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-        let menuError = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let menuError = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐑𝐎𝐑 ﹒ ${command.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗘𝗥𝗢𝗥 ・ ${command.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🍕
+── *📝 DESCRIPCIÓN* ╏ 🌸
 ❌ ➛ ${e.message}
-😿 ➛ Garfield no pudo reconocerlo, estaba dormido
+💔 ➛ Mary no pudo reconocerlo, estaba horneando
 
-── *💡 SOLUCIÓN* ╏ 🍕
-🔧 ➛ Usa un audio/video más claro
-🔧 ➛ Asegúrate que tenga música con voz
-🍝 ➛ Prueba con más lasaña... digo, más volumen
+── *💡 SOLUCIÓN* ╏ 🌸
+🍬 ➛ Usa un audio/video más claro
+🍬 ➛ Asegúrate que tenga música con voz
+🍩 ➛ Prueba con más dulces... digo, más volumen
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: menuError }, { quoted: m })
     }
