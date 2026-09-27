@@ -11,18 +11,18 @@ let handler = async (m, { conn, command }) => {
   }
 
   const error = (msg) => {
-    return m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    return m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐂𝐎𝐍𝐕𝐄𝐑𝐓𝐈𝐃𝐎𝐑 ﹒ ERROR ：✿ 。
+🌸 ┇ 𝗖𝗢𝗡𝗩𝗘𝗥𝗧𝗜𝗗𝗢𝗥 ・ ERROR 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 😼
+── *📝 AVISO* ╏ 💖
 ❌ ➛ ${msg}
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
   }
 
@@ -34,20 +34,20 @@ let handler = async (m, { conn, command }) => {
       await react('⏳')
       let media = await m.quoted.download()
       let out = await webp2mp4(media)
-      await conn.sendFile(m.chat, out, 'video.mp4', `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+      await conn.sendFile(m.chat, out, 'video.mp4', `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐓𝐎𝐕𝐈𝐃𝐄𝐎 ﹒ COMPLETADO ：✿ 。
+🌸 ┇ 𝗧𝗢𝗩𝗜𝗗𝗘𝗢 ・ COMPLETADO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`CONVERTIDO\`\` ✅ —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🍕
+── *📊 ESTADO* ╏ 🌸
 ✅ ➛ Conversión completada
 🎬 ➛ Sticker animado a Video MP4
-👤 ➛ LUX X YALLICO 😼
+👤 ➛ SWEET BOT 💖
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`, m)
       await react('✅')
     } catch (e) {
@@ -65,20 +65,20 @@ let handler = async (m, { conn, command }) => {
       await react('⏳')
       let media = await q.download?.()
       let audio = await toAudio(media, 'mp4')
-      await conn.sendFile(m.chat, audio.data, 'audio.mp3', `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+      await conn.sendFile(m.chat, audio.data, 'audio.mp3', `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐓𝐎𝐌𝐏𝟑 ﹒ COMPLETADO ：✿ 。
+🌸 ┇ 𝗧𝗢𝗠𝗣𝟑 ・ COMPLETADO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`EXTRAIDO\`\` ✅ —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🍕
+── *📊 ESTADO* ╏ 🌸
 ✅ ➛ Audio extraído
 🎵 ➛ Formato: MP3
-👤 ➛ LUX X YALLICO 😼
+👤 ➛ SWEET BOT 💖
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`, m, null, { mimetype: 'audio/mp4' })
       await react('✅')
     } catch (e) {
@@ -97,20 +97,20 @@ let handler = async (m, { conn, command }) => {
       let media = await q.download()
       await conn.sendMessage(m.chat, { 
         image: media, 
-        caption: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        caption: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐓𝐎𝐈𝐌𝐆 ﹒ COMPLETADO ：✿ 。
+🌸 ┇ 𝗧𝗢𝗜𝗠𝗚 ・ COMPLETADO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`CONVERTIDO\`\` ✅ —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🍕
+── *📊 ESTADO* ╏ 🌸
 ✅ ➛ Conversión completada
 🖼️ ➛ Sticker a Imagen JPG
-👤 ➛ LUX X YALLICO 😼
+👤 ➛ SWEET BOT 💖
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━` 
       }, { quoted: m })
       await react('✅')
