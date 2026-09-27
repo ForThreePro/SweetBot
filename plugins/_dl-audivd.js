@@ -13,38 +13,39 @@ const react = async (conn, m, text) => {
 
 const handler = async (m, { conn }) => {
     const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-    const ownerNum = global.owner?.[0]?.[0] || '51927174369'
+    const ownerNum = '573044563583'
     const q = m.quoted? m.quoted : m
     const mime = (q.msg || q).mimetype || ''
 
     if (!/video/.test(mime)) {
-        let menuUso = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let menuUso = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐇𝐄𝐑𝐀𝐌𝐈𝐄𝐍𝐓𝐀 ﹒ AUDIVD ：✿ 。
+🌸 ┇ 𝗛𝗘𝗥𝗥𝗔𝗠𝗜𝗘𝗡𝗧𝗔 ・ AUDIVD 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
   ꒱ ׁ. ᘏ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢 ׅ 𝆬 ָ֢ ෆ
-🎵 ࣪ ꕀ.audivd ˚. ᵎᵎ
-> *"Sacando el audio como Garfield saca la lasaña del horno"*
+🍭 ࣪ ꕀ.audivd ˚. ᵎᵎ
+> *"Sacando el audio como Mary saca pastelitos del horno"*
 
 .⃟𖥔 ݁. 𖦹˙— \`\`HERRAMIENTA\`\` ⚙️ —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🍕
-🎵 ➛ Extrae el audio de un video
-🎵 ➛ Convierte a MP3 192kbps
-😼 ➛ Garfield escuchando mientras come
+── *📝 DESCRIPCIÓN* ╏ 🌸
+🍬 ➛ Extrae el audio de un video
+🎀 ➛ Convierte a MP3 192kbps
+💖 ➛ Mary escuchando mientras hornea
 
-── *📖 USO* ╏ 🍕
+── *📖 USO* ╏ 🌸
 1️⃣ ➛ Responde a un video con:.*audivd*
 2️⃣ ➛ O usa el alias:.*audio*
 
-── *📦 FORMATO* ╏ 🍕
+── *📦 FORMATO* ╏ 🌸
 ⬇️ ➛ Salida: *MP3 44.1kHz Stereo*
-🍝 ➛ Calidad lasaña premium
+🍩 ➛ Calidad dulce premium
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
-*Owner*: @${ownerNum}
+🌸 *SWEET BOT - Creado por Mary* 💖
+👑 *Creadora:* Mary 🍩
+🍭 +57 3044563583 🍬
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: menuUso, mentions: [ownerNum + '@s.whatsapp.net'] }, { quoted: m })
     }
@@ -53,21 +54,21 @@ const handler = async (m, { conn }) => {
     let tempAudio
     try {
         await react(conn, m, "⏳")
-        await m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        await m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐏𝐑𝐎𝐂𝐄𝐒𝐀𝐍𝐃𝐎 ﹒ AUDIVD ：✿ 。
+🌸 ┇ 𝗣𝗥𝗢𝗖𝗘𝗦𝗔𝗡𝗗𝗢 ・ AUDIVD 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`PROCESANDO\`\` ⚙️ —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🍕
-📥 ➛ Descargando video...
-🎵 ➛ Extrayendo audio...
+── *📊 ESTADO* ╏ 🌸
+🍬 ➛ Descargando video...
+🍭 ➛ Extrayendo audio...
 ⚙️ ➛ Convirtiendo a MP3...
-😴 ➛ Garfield espera con hambre...
+🌸 ➛ Mary espera con dulzura...
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
 
         const videoBuffer = await q.download()
@@ -101,25 +102,25 @@ const handler = async (m, { conn }) => {
         }, { quoted: m })
 
         await react(conn, m, "✅")
-        let menuOk = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let menuOk = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐀𝐃𝐎 ﹒ AUDIVD ：✿ 。
+🌸 ┇ 𝗖𝗢𝗠𝗣𝗟𝗘𝗧𝗔𝗗𝗢 ・ AUDIVD 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`RESULTADO\`\` 🎵 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`RESULTADO\`\` 🍭 —˙𖦹.꒷
 
-── *📊 RESULTADO* ╏ 🍕
+── *📊 RESULTADO* ╏ 🌸
 ✅ ➛ Audio extraído correctamente
-📌 ➛ Formato: *MP3 192kbps*
-📌 ➛ Calidad: *44.1kHz Stereo*
-😼 ➛ Garfield aprueba este audio
+🍬 ➛ Formato: *MP3 192kbps*
+💖 ➛ Calidad: *44.1kHz Stereo*
+🌸 ➛ Mary aprueba este audio
 
-── *📥 DESCARGA* ╏ 🍕
+── *📥 DESCARGA* ╏ 🌸
 ⬇️ ➛ Archivo enviado arriba
-🍝 ➛ Listo para escuchar comiendo lasaña
+🍩 ➛ Listo para escuchar comiendo pastelitos
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: menuOk }, { quoted: m })
 
@@ -127,24 +128,24 @@ const handler = async (m, { conn }) => {
         console.error(e)
         await react(conn, m, "❌")
         const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-        let menuErr = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        let menuErr = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ AUDIVD ：✿ 。
+🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ AUDIVD 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🍕
+── *📝 DESCRIPCIÓN* ╏ 🌸
 ❌ ➛ ${e.message}
-😴 ➛ Garfield se quedó dormido
+🍪 ➛ Mary se distrajo horneando
 
-── *💡 SOLUCIÓN* ╏ 🍕
-🔧 ➛ Usa un video válido
-🔧 ➛ Máx 2 minutos recomendado
-🍕 ➛ Intenta con menos peso que una lasaña
+── *💡 SOLUCIÓN* ╏ 🌸
+🍬 ➛ Usa un video válido
+🍬 ➛ Máx 2 minutos recomendado
+🍩 ➛ Intenta con menos peso que un pastelito
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
         return conn.sendMessage(m.chat, { text: menuErr }, { quoted: m })
     } finally {
