@@ -15,83 +15,83 @@ let handler = async (m, { conn }) => {
   let mime = (q.msg || q).mimetype || ''
   if (!mime) {
     await react('❌')
-    return conn.reply(m.chat, `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    return conn.reply(m.chat, `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐔𝐏𝐋𝐎𝐀𝐃𝐄𝐑 ﹒ USO ：✿ 。
+🌸 ┇ 𝗨𝗣𝗟𝗢𝗔𝗗𝗘𝗥 ・ USO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`COMO USAR\`\` ⚠️ —˙𖦹.꒷
 
-── *📖 INSTRUCCIONES* ╏ 🍕
+── *📖 INSTRUCCIONES* ╏ 🌸
 ➛ Responde a una *imagen, video, audio o documento*
 ➛ Formatos: Imagen | Video | Audio | Doc
-😼 ➛ Garfield lo subirá a la nube pe
+💖 ➛ Mary lo subirá a la nube porfi
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`, m)
   }
 
   try {
     await react('⏳')
-    await m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    await m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐔𝐏𝐋𝐎𝐀𝐃𝐄𝐑 ﹒ SUBIENDO ：✿ 。
+🌸 ┇ 𝗨𝗣𝗟𝗢𝗔𝗗𝗘𝗥 ・ SUBIENDO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`PROCESANDO\`\` ☁️ —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 😼
+── *📊 ESTADO* ╏ 💖
 ⏳ ➛ Subiendo archivo a la nube evogb.win...
 ⚡ ➛ Generando enlace...
-🍕 ➛ Garfield está trabajando... casi
+🍩 ➛ Mary está trabajando... casi
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
 
     let media = await q.download()
     let link = await myCloud(media)
     if (!link.url) throw new Error('Sin URL')
 
-    let txt = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let txt = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐔𝐏𝐋𝐎𝐀𝐃𝐄𝐑 ﹒ COMPLETADO ：✿ 。
+🌸 ┇ 𝗨𝗣𝗟𝗢𝗔𝗗𝗘𝗥 ・ COMPLETADO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`RESULTADO\`\` ✅ —˙𖦹.꒷
-😼 Garfield subió tu archivo sin levantarse mucho
+💖 Mary subió tu archivo horneando
 
-── *📊 DATOS DEL ARCHIVO* ╏ 🍕
+── *📊 DATOS DEL ARCHIVO* ╏ 🌸
 🔗 ➛ Enlace: ${link.url}
 🆔 ➛ ID: ${link.id || 'N/A'}
 📦 ➛ Peso: ${formatBytes(media.length)}
 🖥️ ➛ Servidor: evogb.win
-👤 ➛ LUX X YALLICO 😼
+👤 ➛ SWEET BOT 💖
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
 
-    await conn.sendFile(m.chat, media, 'lux-yallico-' + crypto.randomBytes(3).toString("hex") + '.' + link.url.split('.').pop(), txt, m)
+    await conn.sendFile(m.chat, media, 'sweet-bot-' + crypto.randomBytes(3).toString("hex") + '.' + link.url.split('.').pop(), txt, m)
     await react('✅')
   } catch (e) {
     console.error(e)
     await react('❌')
-    await conn.reply(m.chat, `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    await conn.reply(m.chat, `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐔𝐏𝐋𝐎𝐀𝐃𝐄𝐑 ﹒ ERROR ：✿ 。
+🌸 ┇ 𝗨𝗣𝗟𝗢𝗔𝗗𝗘𝗥 ・ ERROR 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
-😼 Se le cayó la lasaña al servidor
+💖 Se le quemó el cupcake al servidor
 
-── *📝 AVISO* ╏ 🍕
+── *📝 AVISO* ╏ 🌸
 ❌ ➛ No se pudo subir el archivo
 💡 ➛ El servidor puede estar saturado
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`, m)
   }
 }
