@@ -1,3 +1,4 @@
+
 import moment from 'moment-timezone'
 moment.locale('es')
 
@@ -18,20 +19,21 @@ export async function before(m, { conn }) {
 
         for (let user of update.participants) {
           if (update.action === 'promote') {
-            let txt = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            let txt = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐃𝐄𝐓𝐄𝐂𝐓 ﹒ ADMIN ：✿ 。
+🌸 ┇ 𝗗𝗘𝗧𝗘𝗖𝗧 ・ ADMIN 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`DADO\`\` 👑 —˙𖦹.꒷
 
-── *👤 ACCION* ╏ 🍕
+── *👤 ACCION* ╏ 🌸
 👑 ➛ Por: @${author.split('@')[0]}
-🎖️ ➛ Nuevo admin: @${user.split('@')[0]}
-😼 ➛ Garfield lo aprueba: "Que cuide mi lasaña"
+🎀 ➛ Nuevo admin: @${user.split('@')[0]}
+💖 ➛ Mary lo aprueba: "Que cuide mis pastelitos"
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
+🍭 +57 3044563583 🍩
 ━━━━━━━━━━━`
             await conn.sendMessage(update.id, {
               image: catalogoImg,
@@ -41,20 +43,21 @@ export async function before(m, { conn }) {
           }
 
           if (update.action === 'demote') {
-            let txt = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            let txt = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐃𝐄𝐓𝐄𝐂𝐓 ﹒ ADMIN ：✿ 。
+🌸 ┇ 𝗗𝗘𝗧𝗘𝗖𝗧 ・ ADMIN 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`QUITADO\`\` 💔 —˙𖦹.꒷
 
-── *👤 ACCION* ╏ 🍕
+── *👤 ACCION* ╏ 🌸
 👑 ➛ Por: @${author.split('@')[0]}
 💔 ➛ Ex-admin: @${user.split('@')[0]}
-😴 ➛ Garfield: "Se quedó sin lasaña"
+🍪 ➛ Mary: "Se quedó sin dulces"
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
+🍭 +57 3044563583 🍩
 ━━━━━━━━━━━`
             await conn.sendMessage(update.id, {
               image: catalogoImg,
@@ -79,20 +82,21 @@ export async function before(m, { conn }) {
           let catalogoImg = { url: 'https://files.evogb.win/EvvgAh.jpg' }
 
           if (update.subject) {
-            let txt = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            let txt = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐃𝐄𝐓𝐄𝐂𝐓 ﹒ NOMBRE ：✿ 。
+🌸 ┇ 𝗗𝗘𝗧𝗘𝗖𝗧 ・ NOMBRE 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`CAMBIADO\`\` 📝 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`CAMBIADO\`\` 🍬 —˙𖦹.꒷
 
-── *👤 ACCION* ╏ 🍕
+── *👤 ACCION* ╏ 🌸
 👑 ➛ Por: @${author.split('@')[0]}
-📝 ➛ Nuevo: *${update.subject}*
-😼 ➛ Garfield: "Odio los lunes y los cambios"
+🍬 ➛ Nuevo: *${update.subject}*
+💖 ➛ Mary: "Amo los cambios dulces"
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
+🍭 +57 3044563583 🍩
 ━━━━━━━━━━━`
             await conn.sendMessage(update.id, {
               image: catalogoImg,
@@ -102,20 +106,21 @@ export async function before(m, { conn }) {
           }
 
           if (update.desc) {
-            let txt = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            let txt = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐃𝐄𝐓𝐄𝐂𝐓 ﹒ DESCRIPCION ：✿ 。
+🌸 ┇ 𝗗𝗘𝗧𝗘𝗖𝗧 ・ DESCRIPCION 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`CAMBIADA\`\` 📄 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`CAMBIADA\`\` 🍭 —˙𖦹.꒷
 
-── *👤 ACCION* ╏ 🍕
+── *👤 ACCION* ╏ 🌸
 👑 ➛ Por: @${author.split('@')[0]}
-📝 ➛ Nueva: ${update.desc.slice(0, 300) || 'Vacía'}
-🍝 ➛ Lasaña descripción
+🌸 ➛ Nueva: ${update.desc.slice(0, 300) || 'Vacía'}
+🍩 ➛ Dulce descripción
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
+🍭 +57 3044563583 🍩
 ━━━━━━━━━━━`
             await conn.sendMessage(update.id, {
               image: catalogoImg,
@@ -125,20 +130,21 @@ export async function before(m, { conn }) {
           }
 
           if (update.icon || update.picture) {
-            let txt = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            let txt = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐃𝐄𝐓𝐄𝐂𝐓 ﹒ FOTO ：✿ 。
+🌸 ┇ 𝗗𝗘𝗧𝗘𝗖𝗧 ・ FOTO 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`CAMBIADA\`\` 🖼️ —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`CAMBIADA\`\` 🎀 —˙𖦹.꒷
 
-── *👤 ACCION* ╏ 🍕
+── *👤 ACCION* ╏ 🌸
 👑 ➛ Por: @${author.split('@')[0]}
-🖼️ ➛ Foto cambiada
-😼 ➛ Garfield revisando nueva foto
+🎀 ➛ Foto cambiada
+💖 ➛ Mary revisando nueva foto
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
+🍭 +57 3044563583 🍩
 ━━━━━━━━━━━`
             await conn.sendMessage(update.id, {
               image: catalogoImg,
@@ -148,20 +154,21 @@ export async function before(m, { conn }) {
           }
 
           if (update.inviteCode) {
-            let txt = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            let txt = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐃𝐄𝐓𝐄𝐂𝐓 ﹒ LINK ：✿ 。
+🌸 ┇ 𝗗𝗘𝗧𝗘𝗖𝗧 ・ LINK 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`RESETEADO\`\` 🔗 —˙𖦹.꒷
 
-── *👤 ACCION* ╏ 🍕
+── *👤 ACCION* ╏ 🌸
 👑 ➛ Por: @${author.split('@')[0]}
 🔗 ➛ Nuevo: https://chat.whatsapp.com/${update.inviteCode}
-🍕 ➛ Link fresco como lasaña
+🍬 ➛ Link fresco como pastelito
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
+🍭 +57 3044563583 🍩
 ━━━━━━━━━━━`
             await conn.sendMessage(update.id, {
               image: catalogoImg,
