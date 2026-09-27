@@ -12,10 +12,10 @@ const handler = async (m, { conn, args, isAdmin, isOwner }) => {
 
   if (/on/i.test(args[0])) {
     chat.bienvenida = true
-    return conn.sendMessage(m.chat, { text: '😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🟢 Bienvenida activada - Garfield despertó' }, { quoted: m })
+    return conn.sendMessage(m.chat, { text: '🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🟢 Bienvenida activada - Mary despertó 💖' }, { quoted: m })
   } else if (/off/i.test(args[0])) {
     chat.bienvenida = false
-    return conn.sendMessage(m.chat, { text: '😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕\n\n🔴 Bienvenida desactivada - Garfield a dormir' }, { quoted: m })
+    return conn.sendMessage(m.chat, { text: '🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n🔴 Bienvenida desactivada - Mary a hornear 🍩' }, { quoted: m })
   }
 }
 
@@ -33,7 +33,7 @@ handler.before = async function (m, { conn, groupMetadata }) {
   const userJid = m.messageStubParameters?.[0] || m.participant
   if (!userJid) return!0
 
-  const DEFAULT_IMG = 'https://files.evogb.win/EvvgAh.jpg'
+  const DEFAULT_IMG = 'https://files.evogb.win/2oSeLs.jpg'
   let imgBuffer = null
   try {
     let userPP = await conn.profilePictureUrl(userJid, 'image')
@@ -57,39 +57,39 @@ handler.before = async function (m, { conn, groupMetadata }) {
     case WAMessageStubType.GROUP_PARTICIPANT_ADD:
       audio = chat.audiowelcome
       txt = chat.customWelcome? chat.customWelcome.replace(/@user/gi, userTag).replace(/@group/gi, groupName).replace(/@desc/gi, groupDesc) :
-`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐁𝐈𝐄𝐍𝐕𝐄𝐍𝐈𝐃𝐎 ﹒ WELCOME ：✿ 。
+🌸 ┇ 𝗕𝗜𝗘𝗡𝗩𝗘𝗡𝗜𝗗𝗢 ・ WELCOME 💖
 
 👋 ➛ ${userTag} llegó a *${groupName}*
 👥 ➛ Miembro N°: *${membersCount}*
-🍝 ➛ Garfield dice: trae lasaña
+🍩 ➛ Mary dice: trae dulces
 
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`
+🌸 *SWEET BOT - Creado por Mary* 💖`
       break
     case WAMessageStubType.GROUP_PARTICIPANT_LEAVE:
       audio = chat.audiobye
       txt = chat.customBye? chat.customBye.replace(/@user/gi, userTag).replace(/@group/gi, groupName) :
-`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐃𝐄𝐒𝐏𝐄𝐃𝐈𝐃𝐀 ﹒ BYE ：✿ 。
+🌸 ┇ 𝗗𝗘𝗦𝗣𝗘𝗗𝗜𝗗𝗔 ・ BYE 💖
 
 💤 ➛ ${userTag} salió de *${groupName}*
-😴 ➛ Garfield: "Uno menos que pide lasaña"
+🍪 ➛ Mary: "Uno menos que pide dulces"
 
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`
+🌸 *SWEET BOT - Creado por Mary* 💖`
       break
     case WAMessageStubType.GROUP_PARTICIPANT_REMOVE:
       audio = chat.audiokick
       txt = chat.customKick? chat.customKick.replace(/@user/gi, userTag).replace(/@group/gi, groupName) :
-`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐗𝐏𝐔𝐋𝐒𝐀𝐃𝐎 ﹒ KICK ：✿ 。
+🌸 ┇ 𝗘𝗫𝗣𝗨𝗟𝗦𝗔𝗗𝗢 ・ KICK 💖
 
 🥊 ➛ ${userTag} fue expulsado de *${groupName}*
-😼 ➛ Garfield: "Se robó mi lasaña"
+💖 ➛ Mary: "Se robó mis dulces"
 
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼`
+🌸 *SWEET BOT - Creado por Mary* 💖`
       break
   }
 
