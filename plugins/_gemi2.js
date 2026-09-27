@@ -12,8 +12,8 @@ let audios = [
 
 // MENSAJES - Van al final
 let mensajes = [
-    '🔥 Aquí tienes tu audio bro',
-    // '😎 Segundo audio pa ti',
+    '🍩🎀 Aquí tienes tu dulce 💖',
+    // '🌸 Segundo dulce para ti 🍭',
 ]
 
 let indice = 0 // Para rotar
@@ -22,8 +22,8 @@ let handler = async (m, { conn }) => {
 
     let videoUrl = videos[indice % videos.length] // Toma el video actual
     let audioUrl = audios[indice % audios.length] // Toma el audio actual
-    let texto = mensajes[indice % mensajes.length] || '✅ Listo bro' // Toma el mensaje
-    
+    let texto = mensajes[indice % mensajes.length] || '✅ Listo dulce 🌸' // Toma el mensaje
+
     indice = (indice + 1) // Siguiente
 
     try {
@@ -32,11 +32,11 @@ let handler = async (m, { conn }) => {
         // 1. DESCARGAR Y ENVIAR VIDEO PRIMERO
         let resVideo = await axios.get(videoUrl, { responseType: 'arraybuffer', timeout: 120000 })
         let videoBuffer = Buffer.from(resVideo.data)
-        
+
         await conn.sendMessage(m.chat, {
             video: videoBuffer,
             mimetype: 'video/mp4',
-            caption: '😼' // Caption opcional
+            caption: '🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩' // Caption opcional
         }, { quoted: m })
 
         await new Promise(resolve => setTimeout(resolve, 800)) // Pausa de 0.8s
@@ -60,11 +60,11 @@ let handler = async (m, { conn }) => {
 
     } catch (err) {
         await m.react('❌')
-        await m.reply(`Error: ${err.message || err}`)
+        await m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩\n\n❌ Error: ${err.message || err}`)
     }
 }
 
 handler.help = ['gemidos - Manda video + audio + mensaje']
-handler.tags = ['tools']
+handler.tags = ['Nsfw']
 handler.command = /^(gemidos)$/i
 export default handler
