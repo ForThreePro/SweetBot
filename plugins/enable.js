@@ -14,25 +14,25 @@ let handler = async (m, { conn, command, args, isOwner, isAdmin, isROwner }) => 
 
   if (!args[0]) {
     await react('❌')
-    let error = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let error = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐂𝐎𝐍𝐅𝐈𝐆𝐔𝐑𝐀𝐂𝐈𝐎𝐍 ﹒ ON/OFF ：✿ 。
+🌸 ┇ 𝗖𝗢𝗡𝗙𝗜𝗚𝗨𝗥𝗔𝗖𝗜𝗢𝗡 ・ ON/OFF 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🍕
+── *📝 AVISO* ╏ 🌸
 ❌ ➛ Falta activar o desactivar
-😼 ➛ Garfield dice: pon on o off pe
+💖 ➛ Mary dice: pon on o off porfi
 
-── *💡 USO* ╏ 🍕
+── *💡 USO* ╏ 🌸
 ➛.welcome on / off
 ➛.antilink on / off
 ➛.nsfw on / off
 ➛.detect on / off
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: error }, { quoted: m })
   }
@@ -87,19 +87,19 @@ let handler = async (m, { conn, command, args, isOwner, isAdmin, isROwner }) => 
   }
 
   if (fail) {
-    let lock = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let lock = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐀𝐂𝐄𝐒𝐎 𝐃𝐄𝐍𝐄𝐆𝐀𝐃𝐎 ﹒ ${type.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗔𝗖𝗘𝗦𝗢 𝗗𝗘𝗡𝗘𝗚𝗔𝗗𝗢 ・ ${type.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` 🔒 —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🍕
+── *📝 AVISO* ╏ 🌸
 🔒 ➛ No tienes permisos para esto
-😼 ➛ Garfield: solo admins pueden tocar esto
+💖 ➛ Mary: solo admins pueden tocar esto
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: lock }, { quoted: m })
   }
@@ -109,21 +109,22 @@ let handler = async (m, { conn, command, args, isOwner, isAdmin, isROwner }) => 
   let estadoTexto = isEnable? 'Activado' : 'Desactivado'
   let estadoEmoji = isEnable? '🟢' : '🔴'
 
-  let statusTxt = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+  let statusTxt = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐂𝐎𝐍𝐅𝐈𝐆𝐔𝐑𝐀𝐂𝐈𝐎𝐍 ﹒ ${type.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗖𝗢𝗡𝗙𝗜𝗚𝗨𝗥𝗔𝗖𝗜𝗢𝗡 ・ ${type.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ACTUALIZADO\`\` ⚙️ —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🍕
+── *📊 ESTADO* ╏ 🌸
 ⚙️ ➛ Función: *${type}*
 ${estadoEmoji} ➛ Estado: *${estadoTexto}*
 👑 ➛ Por: @${m.sender.split('@')[0]}
-😼 ➛ Garfield ${isEnable? 'aprobó 🍕' : 'se fue a dormir 😴'}
+💖 ➛ Mary ${isEnable? 'aprobó 🍩' : 'se fue a hornear 🍪'}
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
+👑 *Creadora:* Mary 🍩
 ━━━━━━━━━━━`
 
   await conn.sendMessage(m.chat, {
