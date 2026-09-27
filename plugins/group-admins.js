@@ -9,28 +9,28 @@ const handler = async (m, { conn, command }) => {
 
   if (!m.mentionedJid[0] &&!m.quoted) {
     await react('❌')
-    let texto = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let texto = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐀𝐃𝐌𝐈𝐍𝐈𝐒𝐓𝐑𝐀𝐂𝐈𝐎𝐍 ﹒ PROMOTE ：✿ 。
+🌸 ┇ 𝗔𝗗𝗠𝗜𝗡𝗜𝗦𝗧𝗥𝗔𝗖𝗜𝗢𝗡 ・ PROMOTE 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`FORMATO\`\` 👑 —˙𖦹.꒷
 
-── *📖 USO* ╏ 🍕
+── *📖 USO* ╏ 🌸
 ➛ Menciona a un usuario
 ➛ Responde al mensaje del usuario
-😼 ➛ Garfield: menciona pe
+💖 ➛ Mary: menciona porfi
 
-── *💡 EJEMPLOS* ╏ 🍕
+── *💡 EJEMPLOS* ╏ 🌸
 ➛.promote @user
 ➛.demote @user
 
-── *📝 AVISO* ╏ 🍕
+── *📝 AVISO* ╏ 🌸
 🔒 ➛ Solo admins
-😼 ➛ Solo los que traen lasaña
+💖 ➛ Solo los que traen dulces
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: texto }, { quoted: m })
   }
@@ -44,54 +44,54 @@ const handler = async (m, { conn, command }) => {
     await conn.groupParticipantsUpdate(m.chat, [user], action)
   } catch {
     await react('❌')
-    let error = `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    let error = `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐑𝐎𝐑 ﹒ ADMIN ：✿ 。
+🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ ADMIN 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 AVISO* ╏ 🍕
+── *📝 AVISO* ╏ 🌸
 ❌ ➛ No se pudo completar la acción
 🔒 ➛ Verifica permisos del bot
-😴 ➛ Garfield dice: el bot no es admin pe
+🍪 ➛ Mary dice: el bot no es admin porfi
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
     return conn.sendMessage(m.chat, { text: error }, { quoted: m })
   }
 
   let msgAccion = action === 'promote'
-? `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+? `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐏𝐑𝐎𝐌𝐎𝐕𝐈𝐃𝐎 ﹒ NUEVO ADMIN ：✿ 。
+🌸 ┇ 𝗣𝗥𝗢𝗠𝗢𝗩𝗜𝗗𝗢 ・ NUEVO ADMIN 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`EXITO\`\` 👑 —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🍕
+── *📊 INFORMACIÓN* ╏ 🌸
 👑 ➛ Nuevo Admin: @${user.split('@')[0]}
 👤 ➛ Por: @${m.sender.split('@')[0]}
-😼 ➛ Garfield aprobó al nuevo admin
+💖 ➛ Mary aprobó al nuevo admin
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
-    : `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+    : `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐃𝐄𝐆𝐑𝐀𝐃𝐀𝐃𝐎 ﹒ QUITAR ADMIN ：✿ 。
+🌸 ┇ 𝗗𝗘𝗚𝗥𝗔𝗗𝗢 ・ QUITAR ADMIN 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`EXITO\`\` 📉 —˙𖦹.꒷
 
-── *📊 INFORMACIÓN* ╏ 🍕
+── *📊 INFORMACIÓN* ╏ 🌸
 📉 ➛ Ya no es Admin: @${user.split('@')[0]}
 👤 ➛ Por: @${m.sender.split('@')[0]}
-😼 ➛ Garfield le quitó el poder
+💖 ➛ Mary le quitó el poder
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
 
   await conn.sendMessage(m.chat, { text: msgAccion, mentions: [user, m.sender] }, { quoted: m })
