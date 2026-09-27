@@ -17,63 +17,64 @@ const getBuffer = async (url) => {
 
 let handler = async (m, { conn, command }) => {
     const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
-    const ownerNum = global.owner?.[0]?.[0] || '51927174369'
+    const ownerNum = '573044563583'
     let text = m.text || m.message?.conversation || m.message?.extendedTextMessage?.text || ''
     text = text.replace(`.${command}`, '').trim()
 
     if (!text) {
-        return conn.sendMessage(m.chat, { text: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        return conn.sendMessage(m.chat, { text: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐒 ﹒ DESCARGAS ：✿ 。
+🌸 ┇ 𝗗𝗘𝗦𝗖𝗔𝗥𝗚𝗔𝗦 ・ DESCARGAS 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
   ꒱ ׁ. ᘏ 𝗖𝗢𝗠𝗔𝗡𝗗𝗢𝗦 ׅ 𝆬 ָ֢ ෆ
-📥 ࣪ ꕀ.descargas ˚. ᵎᵎ
-> *"Descargando como Garfield devora lasaña un lunes"*
+🍭 ࣪ ꕀ.descargas ˚. ᵎᵎ
+> *"Descargando como Mary hornea pastelitos dulces"*
 
-.⃟𖥔 ݁. 𖦹˙— \`\`USO\`\` 📥 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`USO\`\` 🍬 —˙𖦹.꒷
 
-── *📝 COMANDOS* ╏ 🍕
+── *📝 COMANDOS* ╏ 🌸
 1️⃣ ➛.*play1* <nombre de canción>
-   🎵 ➛ Descarga audio de YouTube MP3
-   😼 ➛ Garfield pone la música
+   🍬 ➛ Descarga audio de YouTube MP3
+   💖 ➛ Mary pone la música
 
 2️⃣ ➛.*ttmp3* <link de tiktok>
-   🎵 ➛ Descarga audio de TikTok MP3
-   🍝 ➛ TikTok sabor lasaña
+   🍭 ➛ Descarga audio de TikTok MP3
+   🍩 ➛ TikTok sabor dulce
 
 3️⃣ ➛.*fb* <link de facebook>
-   📹 ➛ Descarga video de Facebook
-   😴 ➛ Hasta Garfield ve FB
+   🎀 ➛ Descarga video de Facebook
+   🌸 ➛ Hasta Mary ve FB
 
-── *💡 EJEMPLOS* ╏ 🍕
+── *💡 EJEMPLOS* ╏ 🌸
 ➛.*play1* despacito
 ➛.*ttmp3* https://tiktok.com/@user/video
 ➛.*fb* https://facebook.com/watch?v=xxx
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
-*Owner*: @${ownerNum}
+🌸 *SWEET BOT - Creado por Mary* 💖
+👑 *Creadora:* Mary 🍩
+🍭 +57 3044563583 🍬
 ━━━━━━━━━━━`, mentions: [ownerNum + '@s.whatsapp.net'] }, { quoted: m })
     }
 
     await react(conn, m, '⏳')
     try {
         if (command === 'play1') {
-            await m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            await m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐍𝐃𝐎 ﹒ PLAY1 ：✿ 。
+🌸 ┇ 𝗗𝗘𝗦𝗖𝗔𝗥𝗚𝗔𝗡𝗗𝗢 ・ PLAY1 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`YOUTUBE\`\` 🎵 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`YOUTUBE\`\` 🍭 —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🍕
+── *📊 ESTADO* ╏ 🌸
 🔍 ➛ Buscando canción...
 ⬇️ ➛ Descargando audio MP3...
-😼 ➛ Garfield eligiendo tema...
+💖 ➛ Mary eligiendo tema...
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
             const searchResult = await ytsearch(text)
             if (!searchResult.videos.length) throw new Error("No se encontró la canción.")
@@ -94,19 +95,19 @@ let handler = async (m, { conn, command }) => {
         }
 
         if (command === 'ttmp3') {
-            await m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            await m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐍𝐃𝐎 ﹒ TTMP3 ：✿ 。
+🌸 ┇ 𝗗𝗘𝗦𝗖𝗔𝗥𝗚𝗔𝗡𝗗𝗢 ・ TTMP3 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`TIKTOK\`\` 🎵 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`TIKTOK\`\` 🍭 —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🍕
+── *📊 ESTADO* ╏ 🌸
 ⬇️ ➛ Descargando audio de TikTok...
-🍝 ➛ Robando audio como lasaña...
+🍩 ➛ Recolectando dulce como pastelito...
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
             const apiUrl = `${api.url}/dl/tiktokmp3?url=${encodeURIComponent(text)}&key=${api.key}`
             const res = await fetch(apiUrl).then(r => r.json())
@@ -125,19 +126,19 @@ let handler = async (m, { conn, command }) => {
         }
 
         if (command === 'fb' || command === 'facebook') {
-            await m.reply(`😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+            await m.reply(`🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐃𝐄𝐒𝐂𝐀𝐑𝐆𝐀𝐍𝐃𝐎 ﹒ FACEBOOK ：✿ 。
+🌸 ┇ 𝗗𝗘𝗦𝗖𝗔𝗥𝗚𝗔𝗡𝗗𝗢 ・ FACEBOOK 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
-.⃟𖥔 ݁. 𖦹˙— \`\`FACEBOOK\`\` 📹 —˙𖦹.꒷
+.⃟𖥔 ݁. 𖦹˙— \`\`FACEBOOK\`\` 🎀 —˙𖦹.꒷
 
-── *📊 ESTADO* ╏ 🍕
+── *📊 ESTADO* ╏ 🌸
 ⬇️ ➛ Descargando video de Facebook...
-😴 ➛ Garfield: "Odio los lunes, no los videos"
+🌸 ➛ Mary: "Amo los videos dulces"
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`)
             const apiUrl = `${api.url}/dl/facebook?url=${encodeURIComponent(text)}&key=${api.key}`
             const res = await fetch(apiUrl)
@@ -155,19 +156,19 @@ let handler = async (m, { conn, command }) => {
             await react(conn, m, '📥')
             await conn.sendMessage(m.chat, {
                 video: videoBuffer,
-                caption: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+                caption: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐂𝐎𝐌𝐏𝐋𝐄𝐓𝐀𝐃𝐎 ﹒ FACEBOOK ：✿ 。
+🌸 ┇ 𝗖𝗢𝗠𝗣𝗟𝗘𝗧𝗔𝗗𝗢 ・ FACEBOOK 💖
 
 .⃟𖥔 ݁. 𖦹˙— \`\`DESCARGADO\`\` ✅ —˙𖦹.꒷
 
-── *📊 RESULTADO* ╏ 🍕
+── *📊 RESULTADO* ╏ 🌸
 ✅ ➛ Video descargado correctamente
-📥 ➛ Disfrútalo
-😼 ➛ Garfield lo aprueba
+🍬 ➛ Disfrútalo
+💖 ➛ Mary lo aprueba
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━`
             }, { quoted: m })
         }
@@ -177,24 +178,24 @@ let handler = async (m, { conn, command }) => {
         await react(conn, m, '❌')
         const fecha = moment.tz('America/Lima').format('DD/MM/YYYY hh:mm:ss a')
         console.log("ERROR:", e)
-        return conn.sendMessage(m.chat, { text: `😼 𓆩 𝗟𝗨𝗫 𝗫 𝗬𝗔𝗟𝗟𝗜𝗖𝗢 𓆪 🍕
+        return conn.sendMessage(m.chat, { text: `🍩🎀 𝗦𝗪𝗘𝗘𝗧 𝗕𝗢𝗧 🎀🍩
 
-⤷ ┇ 𝐄𝐑𝐑𝐎𝐑 ﹒ ${command.toUpperCase()} ：✿ 。
+🌸 ┇ 𝗘𝗥𝗥𝗢𝗥 ・ ${command.toUpperCase()} 💖
 ꒰ ◞⁺⊹ ．${fecha}
 
 .⃟𖥔 ݁. 𖦹˙— \`\`ERROR\`\` ❌ —˙𖦹.꒷
 
-── *📝 DESCRIPCIÓN* ╏ 🍕
+── *📝 DESCRIPCIÓN* ╏ 🌸
 ❌ ➛ ${e.message}
-😿 ➛ Garfield se quedó sin lasaña
+💔 ➛ Mary se quedó sin dulces
 
-── *💡 SOLUCIÓN* ╏ 🍕
-🔧 ➛ Verifica que el link sea válido
-🔧 ➛ Asegúrate que no sea privado
-🍝 ➛ Intenta de nuevo, como buscar lasaña
+── *💡 SOLUCIÓN* ╏ 🌸
+🍬 ➛ Verifica que el link sea válido
+🍬 ➛ Asegúrate que no sea privado
+🍩 ➛ Intenta de nuevo, como hornear pastelitos
 
 ━━━━━━━━━━━
-🍕 *LUX X YALLICO - GARFIELD EDITION* 😼
+🌸 *SWEET BOT - Creado por Mary* 💖
 ━━━━━━━━━━━` }, { quoted: m })
     }
 }
